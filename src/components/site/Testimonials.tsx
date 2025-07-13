@@ -1,37 +1,31 @@
 'use client';
 
 import { Card, CardContent } from '@/components/ui/card';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from '@/components/ui/carousel';
+
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Star } from 'lucide-react';
+import Carousel from "@/components/ui/carousel";
 
-const testimonials = [
+const slideData = [
   {
-    name: 'Sarah L.',
-    role: 'Parent of a 7-year-old',
-    avatar: 'https://placehold.co/100x100.png',
-    aiHint: 'woman portrait',
-    text: 'My daughter\'s confidence in math has soared since she joined. The teachers are fantastic and make learning so much fun!',
+    title: "Mystic Mountains",
+    button: "Explore Component",
+    src: "https://images.unsplash.com/photo-1494806812796-244fe51b774d?q=80&w=3534&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    name: 'Michael B.',
-    role: 'Parent of a 9-year-old',
-    avatar: 'https://placehold.co/100x100.png',
-    aiHint: 'man portrait',
-    text: 'I\'m amazed at how quickly my son picked up mental math. This program has significantly improved his concentration and academic performance.',
+    title: "Urban Dreams",
+    button: "Explore Component",
+    src: "https://images.unsplash.com/photo-1518710843675-2540dd79065c?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    name: 'Emily C.',
-    role: 'Parent of two students',
-    avatar: 'https://placehold.co/100x100.png',
-    aiHint: 'smiling woman',
-    text: 'Both of my children attend the academy and love it. It\'s the best investment I\'ve made in their education. Highly recommended!',
+    title: "Neon Nights",
+    button: "Explore Component",
+    src: "https://images.unsplash.com/photo-1590041794748-2d8eb73a571c?q=80&w=3456&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    title: "Desert Whispers",
+    button: "Explore Component",
+    src: "https://images.unsplash.com/photo-1679420437432-80cfbf88986c?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
 
@@ -47,46 +41,9 @@ export default function Testimonials() {
             Hear from families who have experienced the Creative Abacus Academy difference.
           </p>
         </div>
-        <Carousel
-          opts={{
-            align: 'start',
-            loop: true,
-          }}
-          className="mx-auto mt-12 w-full max-w-4xl"
-        >
-          <CarouselContent>
-            {testimonials.map((testimonial, index) => (
-              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                <div className="p-1">
-                  <Card className="h-full shadow-lg">
-                    <CardContent className="flex h-full flex-col justify-between p-6">
-                      <div>
-                        <div className="mb-4 flex">
-                          {[...Array(5)].map((_, i) => (
-                            <Star key={i} className="h-5 w-5 fill-primary text-primary" />
-                          ))}
-                        </div>
-                        <p className="text-muted-foreground">&quot;{testimonial.text}&quot;</p>
-                      </div>
-                      <div className="mt-6 flex items-center gap-4">
-                        <Avatar>
-                          <AvatarImage src={testimonial.avatar} alt={testimonial.name} data-ai-hint={testimonial.aiHint} />
-                          <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
-                        </Avatar>
-                        <div>
-                          <p className="font-semibold">{testimonial.name}</p>
-                          <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
-        </Carousel>
+        <div className="relative overflow-hidden w-full h-full py-20">
+      <Carousel slides={slideData} />
+    </div>
       </div>
     </section>
   );
