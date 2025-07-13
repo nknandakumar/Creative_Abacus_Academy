@@ -18,6 +18,12 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
+        hostname: 'images.unsplash.com',
+        port: '',
+        search: '',
+      },
+      {
+        protocol: 'https',
         hostname: 'lh6.googleusercontent.com',
         port: '',
         pathname: '/**',
