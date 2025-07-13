@@ -1,5 +1,5 @@
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { Users, UserCheck, Award, GraduationCap, Trophy, MapPin } from 'lucide-react';
+import { UserCheck, Award, GraduationCap, Trophy } from 'lucide-react';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
 
@@ -8,7 +8,7 @@ const features = [
     icon: <Award className="h-8 w-8 text-amber-500" />,
     title: 'ISO-Certified Excellence',
     description: 'An assurance of quality and standardized education in Abacus & Vedic Maths.',
-    className: 'col-span-2 row-span-6',
+    className: 'md:col-span-2 md:row-span-6',
     content: (
         <Image 
             src="https://placehold.co/400x600.png"
@@ -24,19 +24,19 @@ const features = [
     icon: <UserCheck className="h-8 w-8 text-indigo-500" />,
     title: 'Expert Trainers',
     description: 'With over 15 years of combined experience, our trainers are dedicated to nurturing each child\'s potential.',
-    className: 'col-start-3 col-span-2 row-span-3',
+    className: 'md:col-span-2 md:row-span-3 md:col-start-3',
   },
   {
     icon: <GraduationCap className="h-8 w-8 text-sky-500" />,
     title: 'Holistic Brain Development',
     description: 'We go beyond math, enhancing focus, memory, and confidence through our specialized curriculum.',
-    className: 'col-start-3 col-span-2 row-start-4 row-span-3',
+    className: 'md:col-span-2 md:row-span-3 md:col-start-3 md:row-start-4',
   },
   {
     icon: <Trophy className="h-8 w-8 text-lime-500" />,
     title: 'Championship Prep',
     description: 'We coach for regional & national finger abacus exams, turning students into champions.',
-    className: 'col-start-5 col-span-2 row-span-6',
+    className: 'md:col-span-2 md:row-span-6 md:col-start-5 md:row-start-1',
     content: (
         <Image 
             src="https://placehold.co/400x600.png"
@@ -62,7 +62,7 @@ export default function WhyChooseUs() {
             We provide a unique learning experience that sets the foundation for your child&apos;s future success.
           </p>
         </div>
-        <div className="mt-12 grid grid-cols-6 grid-rows-6 gap-2 md:gap-4 h-[600px] lg:h-[800px]">
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-6 md:grid-rows-6 gap-4 md:h-[600px] lg:h-[800px]">
             {features.map((feature) => (
                 <Card 
                   key={feature.title} 
