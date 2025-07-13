@@ -21,7 +21,7 @@ export default function WhyChooseUs() {
           {/* ISO-Certified Excellence Card */}
           <Card
             className={cn(
-              "p-6 bg-[#FCD0D1] rounded-2xl flex flex-col justify-between  ",
+              "p-6 rounded-2xl flex flex-col justify-between  ",
               'md:col-span-2 md:row-span-4'
             )}
           >
@@ -66,11 +66,10 @@ export default function WhyChooseUs() {
                   <div className='flex flex-col'>
 
                     <CardHeader className="p-0">
-                      <CardTitle className="font-headline text-xl lg:text-2xl font-bold">Holistic Brain Development</CardTitle>
+                      <CardTitle className="font-headline text-xl lg:text-4xl font-bold">Professional </CardTitle>
+                      <CardTitle className="font-headline text-xl lg:text-4xl font-bold">     Teachers </CardTitle>
                     </CardHeader>
-                    <CardDescription className="mt-2 text-muted-foreground text-sm lg:text-base">
-                      We go beyond math, enhancing focus, memory, and confidence through our specialized curriculum.
-                    </CardDescription>
+                   
                   </div>
                 </Card>
 
