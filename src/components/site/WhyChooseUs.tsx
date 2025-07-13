@@ -1,26 +1,51 @@
-import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { MapPin, Users, UserCheck, Award } from 'lucide-react';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
+import { Users, UserCheck, Award, GraduationCap } from 'lucide-react';
+import Image from 'next/image';
 
 const features = [
   {
-    icon: <MapPin className="h-8 w-8 text-primary" />,
-    title: '2 Convenient locations',
-    description: 'Accessible centers for hassle-free learning.',
+    icon: <UserCheck className="h-8 w-8 text-indigo-500" />,
+    title: 'Expert Trainers',
+    description: 'Learn from experienced instructors with over 15 years of combined expertise in abacus and mental maths education.',
+    className: "col-span-1 md:col-span-2 bg-pink-100 dark:bg-pink-900/50 border-pink-200 dark:border-pink-800",
+    content: (
+        <Image 
+            src="https://placehold.co/600x400.png"
+            alt="Illustration of teachers guiding students"
+            width={400}
+            height={250}
+            className="w-full h-auto object-contain mt-4"
+            data-ai-hint="teacher student illustration"
+        />
+    )
   },
   {
-    icon: <Users className="h-8 w-8 text-primary" />,
-    title: '100+ students trained',
-    description: 'Join a growing community of successful learners.',
-  },
-  {
-    icon: <UserCheck className="h-8 w-8 text-primary" />,
-    title: 'Professional Teachers',
-    description: 'Learn from experienced and dedicated instructors.',
-  },
-  {
-    icon: <Award className="h-8 w-8 text-primary" />,
-    title: 'ISO Certified',
+    icon: <Award className="h-8 w-8 text-amber-500" />,
+    title: 'ISO Certified Excellence',
     description: 'An assurance of quality and standardized education.',
+    className: 'bg-amber-100 dark:bg-amber-900/50 border-amber-200 dark:border-amber-800',
+  },
+  {
+    icon: <Users className="h-8 w-8 text-lime-500" />,
+    title: '100+ Students Trained',
+    description: 'Join a growing community of successful learners.',
+    className: 'bg-lime-100 dark:bg-lime-900/50 border-lime-200 dark:border-lime-800',
+  },
+  {
+    icon: <GraduationCap className="h-8 w-8 text-sky-500" />,
+    title: 'Holistic Brain Development',
+    description: 'Our curriculum is designed to enhance focus, memory, and confidence.',
+    className: "col-span-1 md:col-span-2 bg-sky-100 dark:bg-sky-900/50 border-sky-200 dark:border-sky-800",
+    content: (
+        <Image 
+            src="https://placehold.co/600x400.png"
+            alt="Illustration of a brain with interconnected ideas"
+            width={400}
+            height={250}
+            className="w-full h-auto object-contain mt-4"
+            data-ai-hint="brain development illustration"
+        />
+    )
   },
 ];
 
@@ -36,20 +61,23 @@ export default function WhyChooseUs() {
             We provide a unique learning experience that sets the foundation for your child&apos;s future success.
           </p>
         </div>
-        <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {features.map((feature, index) => (
-            <Card key={index} className="flex flex-col items-center justify-start text-center p-6 rounded-xl shadow-lg transition-transform hover:scale-105">
-              <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
-                {feature.icon}
-              </div>
-              <CardHeader className="p-0">
-                <CardTitle className="font-headline text-xl font-bold">{feature.title}</CardTitle>
-              </CardHeader>
-              <CardDescription className="mt-2 text-muted-foreground">
-                {feature.description}
-              </CardDescription>
-            </Card>
-          ))}
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+            {features.map((feature) => (
+                <Card key={feature.title} className={`p-6 shadow-lg rounded-2xl flex flex-col justify-between ${feature.className}`}>
+                    <div>
+                        <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-white dark:bg-slate-800">
+                           {feature.icon}
+                        </div>
+                        <CardHeader className="p-0">
+                            <CardTitle className="font-headline text-2xl font-bold">{feature.title}</CardTitle>
+                        </CardHeader>
+                        <CardDescription className="mt-2 text-slate-700 dark:text-slate-300">
+                            {feature.description}
+                        </CardDescription>
+                    </div>
+                    {feature.content && <CardContent className="p-0 mt-4">{feature.content}</CardContent>}
+                </Card>
+            ))}
         </div>
       </div>
     </section>
