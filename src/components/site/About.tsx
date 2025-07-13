@@ -9,10 +9,10 @@ export default function About() {
         <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
           <div className="space-y-6">
             <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-              Creative Abacus Academy
+              About Creative Abacus Academy
             </h2>
-            <p className="max-w-[700px] text-muted-foreground md:text-xl/relaxed">
-              Creative Abacus Academy, established in 2021 by Founder Anthony Serao and led by Headmaster Nirmala Sunitha Mendonca, is recognized as the best abacus center in Shivamogga. Our ISO-certified curriculum has empowered 100+ students through structured finger abacus and vedic maths programs.
+            <p className=" mx-auto text-muted-foreground md:text-xl" data-ai-hint="Description of the creative abacus academy">
+ Creative Abacus Academy, established in 2021 by <strong>Founder Anthony Serao</strong> and led by <strong>Headmaster Nirmala Sunitha Mendonca</strong>, is recognized as the <strong>best abacus center in Shivamogga</strong>. Our ISO-certified curriculum has empowered <strong>100+ students</strong> through structured finger abacus and vedic maths programs.
             </p>
             <Card className="shadow-lg">
               <CardHeader className="flex flex-row items-center gap-4">
@@ -31,40 +31,7 @@ export default function About() {
               </CardContent>
             </Card>
           </div>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="flex flex-col items-center text-center gap-2">
-                <Image
-                  src="https://placehold.co/300x400.png"
-                  alt="Founder Anthony Serao"
-                  width={300}
-                  height={400}
-                  className="h-full w-full object-cover rounded-lg shadow-lg"
-                  data-ai-hint="portrait man"
-                />
-                <h3 className="font-bold text-lg">Anthony Serao</h3>
-                <p className="text-sm text-muted-foreground">Founder</p>
-            </div>
-            <div className="flex flex-col items-center text-center gap-2">
-                <Image
-                  src="https://placehold.co/300x400.png"
-                  alt="Headmaster Nirmala Sunitha Mendonca"
-                  width={300}
-                  height={400}
-                  className="h-full w-full object-cover rounded-lg shadow-lg"
-                  data-ai-hint="portrait woman"
-                />
-                <h3 className="font-bold text-lg">Nirmala Sunitha Mendonca</h3>
-                <p className="text-sm text-muted-foreground">Headmaster</p>
-            </div>
-             <Image
-              src="https://placehold.co/600x400.png"
-              alt="ISO Certificate of Creative Abacus Academy"
-              width={600}
-              height={400}
-              className="col-span-2 h-full w-full object-cover rounded-lg shadow-lg"
-              data-ai-hint="certificate document"
-            />
-          </div>
+
         </div>
       </div>
     </section>

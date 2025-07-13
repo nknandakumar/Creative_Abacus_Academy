@@ -5,6 +5,8 @@ import { Badge } from '@/components/ui/badge';
 import { Star } from 'lucide-react';
 
 export default function Hero() {
+  const imgSrc = 'https://lh6.googleusercontent.com/proxy/G76FowBalnK1O447fkstznxfFNPPDBoXPJBTW0sPWRV9LsKLEFXp-YeN2sxf2fvvoWPiM7SsQFB4v0ScTc25lrwvmKt4x2ULmS4DGOwWNOihnAAwfJyj5egKYwwA8-R5TMzr1CNQwQ';
+
   return (
     <section id="home" className="w-full py-12 bg-[#F8F8F8] md:py-24 lg:py-32">
       <div className="container px-4 md:px-6">
@@ -27,7 +29,7 @@ export default function Hero() {
         </div>
         <div className="mt-12 md:mt-16 flex justify-center">
           <Image
-            src="https://placehold.co/1200x600.png"
+            src={imgSrc}
             alt="3D Abacus Illustration"
             width={1200}
             height={500}
