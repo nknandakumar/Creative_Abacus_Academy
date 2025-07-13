@@ -12,6 +12,7 @@ const navLinks = [
   { name: 'Courses', href: '#courses' },
   { name: 'Benefits', href: '#benefits' },
   { name: 'Gallery', href: '#gallery' },
+  { name: 'FAQ', href: '#faq' },
   { name: 'Contact', href: '#contact' },
 ];
 
@@ -53,7 +54,9 @@ export default function Header() {
           ))}
         </nav>
         <div className="hidden md:block">
-          <Button>Enroll Now</Button>
+           <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
+             <Link href="#contact">Book a Free Trial</Link>
+           </Button>
         </div>
         <div className="md:hidden">
           <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
@@ -81,7 +84,9 @@ export default function Header() {
                     </Link>
                   ))}
                 </nav>
-                <Button size="lg" className="w-full" onClick={closeSheet}>Enroll Now</Button>
+                 <Button asChild size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90" onClick={closeSheet}>
+                    <Link href="#contact">Book a Free Trial</Link>
+                 </Button>
               </div>
             </SheetContent>
           </Sheet>

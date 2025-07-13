@@ -9,7 +9,8 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { Card, CardContent } from '@/components/ui/card';
-import { Mail, MapPin, Phone } from 'lucide-react';
+import { Mail, MapPin, Phone, Clock, FileText } from 'lucide-react';
+import Link from 'next/link';
 
 const formSchema = z.object({
   name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
@@ -32,8 +33,8 @@ export default function Contact() {
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
     toast({
-      title: 'Message Sent!',
-      description: "Thank you for reaching out. We'll get back to you soon.",
+      title: 'Enquiry Sent!',
+      description: "Thank you for reaching out. We'll get back to you soon to secure your admission slot.",
     });
     form.reset();
   }
@@ -43,15 +44,37 @@ export default function Contact() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-            Get In Touch
+            Enquiry & Admission Form
           </h2>
           <p className="mt-4 text-muted-foreground md:text-xl">
-            Have questions? We&apos;d love to hear from you.
+            Fill out the form below to secure your admission slot.
           </p>
         </div>
         <div className="mt-12 grid gap-12 lg:grid-cols-5">
           <div className="lg:col-span-2">
             <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
+                    <MapPin className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                    <h3 className="text-xl font-semibold">Our Branches</h3>
+                    <p className="text-muted-foreground">**Gandhinagar:** 2nd Cross, Beside Vidhathri Bhavan, Opp. Arun Ice Cream, Shimoga</p>
+                    <p className="text-muted-foreground">**Devraj Aras Badavane:** Somina Koppa, Shivamogga</p>
+                    <Button variant="link" asChild className="p-0 h-auto mt-2">
+                        <Link href="https://maps.google.com" target='_blank'>Get Directions on Google Maps</Link>
+                    </Button>
+                    </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
+                  <Phone className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold">Phone</h3>
+                  <p className="text-muted-foreground">96634 44851</p>
+                </div>
+              </div>
               <div className="flex items-start gap-4">
                 <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
                   <Mail className="h-6 w-6 text-primary" />
@@ -63,20 +86,11 @@ export default function Contact() {
               </div>
               <div className="flex items-start gap-4">
                 <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                  <Phone className="h-6 w-6 text-primary" />
+                  <Clock className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold">Phone</h3>
-                  <p className="text-muted-foreground">+1 (234) 567-890</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                  <MapPin className="h-6 w-6 text-primary" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold">Address</h3>
-                  <p className="text-muted-foreground">123 Learning Lane, Knowledge City, 45678</p>
+                  <h3 className="text-xl font-semibold">Hours</h3>
+                  <p className="text-muted-foreground">Mon–Sat: 10 AM–6 PM</p>
                 </div>
               </div>
             </div>
@@ -84,6 +98,13 @@ export default function Contact() {
           <div className="lg:col-span-3">
             <Card className="p-6 shadow-lg sm:p-8">
               <CardContent className="p-0">
+                 <div className="flex items-center gap-4 border border-dashed p-4 rounded-lg mb-6">
+                    <FileText className="h-8 w-8 text-primary" />
+                    <div>
+                        <h4 className="font-semibold">Required Documents:</h4>
+                        <p className="text-sm text-muted-foreground">Recent Photo, Aadhar Card, Birth Certificate</p>
+                    </div>
+                </div>
                 <Form {...form}>
                   <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                     <FormField
@@ -91,9 +112,9 @@ export default function Contact() {
                       name="name"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Name</FormLabel>
+                          <FormLabel>Your Name</FormLabel>
                           <FormControl>
-                            <Input placeholder="Your Name" {...field} />
+                            <Input placeholder="Parent or Guardian Name" {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -104,7 +125,7 @@ export default function Contact() {
                       name="email"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Email</FormLabel>
+                          <FormLabel>Email Address</FormLabel>
                           <FormControl>
                             <Input placeholder="your.email@example.com" {...field} />
                           </FormControl>
@@ -117,16 +138,16 @@ export default function Contact() {
                       name="message"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Message</FormLabel>
+                          <FormLabel>Your Message</FormLabel>
                           <FormControl>
-                            <Textarea placeholder="Your message or question..." {...field} rows={5} />
+                            <Textarea placeholder="Your message, child's name, and age..." {...field} rows={5} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
                       )}
                     />
                     <Button type="submit" className="w-full">
-                      Send Message
+                      Submit Enquiry
                     </Button>
                   </form>
                 </Form>

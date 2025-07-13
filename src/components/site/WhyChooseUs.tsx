@@ -1,26 +1,36 @@
 import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { BrainCircuit, Users, Award, Smile } from 'lucide-react';
+import { Award, Target, UserCheck, MapPin, BrainCircuit, Users } from 'lucide-react';
 
 const features = [
   {
-    icon: <BrainCircuit className="h-8 w-8 text-primary" />,
-    title: 'Expert Instructors',
-    description: 'Our certified teachers are trained to make learning engaging and effective for all age groups.',
-  },
-  {
     icon: <Award className="h-8 w-8 text-primary" />,
-    title: 'Proven Curriculum',
-    description: 'We use a structured, results-oriented curriculum that has been proven to enhance cognitive abilities.',
+    title: 'ISO-Certified Excellence',
+    description: 'In Abacus & Vedic Maths, ensuring the highest standards of education.',
   },
   {
-    icon: <Smile className="h-8 w-8 text-primary" />,
-    title: 'Fun Learning Environment',
-    description: 'We believe in learning through play, with interactive games and activities to keep students motivated.',
+    icon: <Target className="h-8 w-8 text-primary" />,
+    title: 'Levels 0–8 Curriculum',
+    description: 'From Beginner to Advanced Mental Calculation for comprehensive learning.',
+  },
+  {
+    icon: <UserCheck className="h-8 w-8 text-primary" />,
+    title: 'Championship Prep',
+    description: 'Specialized coaching for regional & national finger abacus exams.',
+  },
+  {
+    icon: <BrainCircuit className="h-8 w-8 text-primary" />,
+    title: 'Expert Trainers',
+    description: 'Our instructors have over 15 years of combined experience.',
+  },
+  {
+    icon: <MapPin className="h-8 w-8 text-primary" />,
+    title: 'Two Convenient Locations',
+    description: 'Easily accessible branches in the heart of Shivamogga.',
   },
   {
     icon: <Users className="h-8 w-8 text-primary" />,
-    title: 'Small Class Sizes',
-    description: 'Personalized attention is guaranteed with our small group settings, ensuring no child is left behind.',
+    title: 'Holistic Brain Development',
+    description: 'We focus on improving focus, memory, and confidence.',
   },
 ];
 
@@ -36,7 +46,7 @@ export default function WhyChooseUs() {
             We provide a unique learning experience that sets the foundation for your child&apos;s future success.
           </p>
         </div>
-        <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {features.map((feature, index) => (
             <Card key={index} className="flex flex-col items-center text-center shadow-md transition-transform hover:scale-105 hover:shadow-xl">
               <CardHeader>

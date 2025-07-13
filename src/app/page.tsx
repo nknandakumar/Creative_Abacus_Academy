@@ -6,6 +6,7 @@ import Courses from '@/components/site/Courses';
 import Benefits from '@/components/site/Benefits';
 import Gallery from '@/components/site/Gallery';
 import Testimonials from '@/components/site/Testimonials';
+import Faq from '@/components/site/Faq';
 import Cta from '@/components/site/Cta';
 import Contact from '@/components/site/Contact';
 import Footer from '@/components/site/Footer';
@@ -22,6 +23,7 @@ export default function Home() {
         <Benefits />
         <Gallery />
         <Testimonials />
+        <Faq />
         <Cta />
         <Contact />
       </main>

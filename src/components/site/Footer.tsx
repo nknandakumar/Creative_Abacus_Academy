@@ -17,7 +17,7 @@ export default function Footer() {
             <span className="font-headline text-2xl font-bold">AbacusAce</span>
           </Link>
           <p className="max-w-xs text-sm text-muted-foreground">
-            Creative Abacus Academy: Nurturing young minds for a brighter future.
+            The Best Abacus Center in Shivamogga. Nurturing young minds for a brighter future.
           </p>
         </div>
         <div className="space-y-2">
@@ -26,6 +26,7 @@ export default function Footer() {
             <li><Link href="#about" className="text-sm text-muted-foreground hover:text-primary">About Us</Link></li>
             <li><Link href="#courses" className="text-sm text-muted-foreground hover:text-primary">Courses</Link></li>
             <li><Link href="#gallery" className="text-sm text-muted-foreground hover:text-primary">Gallery</Link></li>
+            <li><Link href="#faq" className="text-sm text-muted-foreground hover:text-primary">FAQ</Link></li>
             <li><Link href="#contact" className="text-sm text-muted-foreground hover:text-primary">Contact</Link></li>
           </ul>
         </div>
@@ -33,8 +34,8 @@ export default function Footer() {
           <h4 className="font-headline font-semibold">Contact Us</h4>
           <ul className="space-y-1">
             <li className="text-sm text-muted-foreground">info@creativeabacus.com</li>
-            <li className="text-sm text-muted-foreground">+1 (234) 567-890</li>
-            <li className="text-sm text-muted-foreground">123 Learning Lane, Knowledge City</li>
+            <li className="text-sm text-muted-foreground">96634 44851</li>
+            <li className="text-sm text-muted-foreground">Gandhinagar, Shivamogga</li>
           </ul>
         </div>
         <div className="space-y-2">
