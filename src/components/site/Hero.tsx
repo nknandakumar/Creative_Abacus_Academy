@@ -1,46 +1,37 @@
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Phone } from 'lucide-react';
+import { Star } from 'lucide-react';
 
 export default function Hero() {
   return (
-    <section id="home" className="relative h-[90vh] min-h-[600px] w-full">
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent z-10" />
-      <Image
-        src="https://placehold.co/1600x900.png"
-        alt="Child's mind being supercharged with abacus training at Creative Abacus Academy"
-        layout="fill"
-        objectFit="cover"
-        className="z-0"
-        data-ai-hint="abacus education"
-        priority
-      />
-      <div className="container relative z-20 mx-auto flex h-full flex-col items-center justify-center px-4 text-center md:px-6">
-        <div className="max-w-4xl space-y-6">
-          <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-            Best Abacus Classes in Shivamogga & Beyond to Supercharge Young Minds
-          </h1>
-          <h2 className="text-xl font-medium text-primary md:text-2xl">
-            ISO-Certified Abacus & Vedic Maths Training | Levels 0–8 | Championship Prep | 100+ Students Trained
-          </h2>
-          <p className="mx-auto max-w-2xl text-lg text-muted-foreground md:text-xl">
-            Unlock your child’s potential with finger abacus, mental calculation, and vedic maths at our two premier branches.
-          </p>
-          <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Button size="lg" asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
-              <Link href="#contact">Book a Free Trial Class</Link>
-            </Button>
-            <Button size="lg" variant="outline" asChild>
-              <a href="tel:9663444851">
-                <Phone className="mr-2 h-5 w-5" />
-                Call: 96634 44851
-              </a>
-            </Button>
-          </div>
-           <p className="text-sm text-muted-foreground">
-             📍 **Gandhinagar Branch** & **Devraj Aras Badavane Branch, Shivamogga**
-          </p>
+    <section id="home" className="w-full py-20 md:py-32 lg:py-40">
+      <div className="container mx-auto flex flex-col items-center justify-center px-4 text-center md:px-6">
+        <div className="flex items-center justify-center rounded-full border border-yellow-300 bg-yellow-50 px-4 py-1 text-sm font-medium text-yellow-800">
+          <Star className="mr-2 h-4 w-4 fill-yellow-400 text-yellow-600" />
+          ISO-Certified Excellence
+        </div>
+        <h1 className="mt-6 font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
+          Welcome to <span className="text-orange-400">Creative Abacus Academy</span>
+        </h1>
+        <p className="mx-auto mt-4 max-w-3xl text-lg text-muted-foreground md:text-xl">
+          Best Abacus Classes in Shivamogga to Supercharge Young Minds
+        </p>
+        <div className="mt-8">
+          <Button size="lg" asChild>
+            <Link href="#contact">Book a Free Trial Class</Link>
+          </Button>
+        </div>
+        <div className="mt-16 w-full max-w-4xl">
+           <Image
+            src="https://placehold.co/1000x600.png"
+            alt="An abacus representing mental math education"
+            width={1000}
+            height={600}
+            className="h-auto w-full rounded-lg object-contain shadow-2xl"
+            data-ai-hint="abacus education"
+            priority
+          />
         </div>
       </div>
     </section>
