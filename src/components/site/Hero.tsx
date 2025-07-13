@@ -6,7 +6,7 @@ import { Star } from 'lucide-react';
 
 export default function Hero() {
   return (
-    <section id="home" className="w-full py-12 bg-secondary md:py-24 lg:py-32">
+    <section id="home" className="w-full py-12 bg-[#F8F8F8] md:py-24 lg:py-32">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center space-y-6 text-center">
           <Badge variant="outline" className="py-1 px-4 rounded-full border-primary/20 bg-primary/10">
@@ -14,14 +14,14 @@ export default function Hero() {
             <span className="font-semibold text-primary">ISO-Certified Excellence</span>
           </Badge>
           <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-6xl !leading-tight">
-          Welcome to <span className='bg-accent px-1' >Creative Abacus Academy</span> Best Abacus Classes in Shivamogga
+          Welcome to <span className='text-accent ' >Creative Abacus Academy</span> Best Abacus Classes in Shivamogga
           </h1>
           <p className="max-w-[700px] text-muted-foreground md:text-xl">
-            ISO-Certified Abacus & Vedic Maths Training | Levels 0–8 | Championship Prep | 100+ Students Trained
+          Unlock sharper focus, faster math skills, and unstoppable confidence through engaging, brain-boosting abacus training for kids
           </p>
           <div className="w-full ">
             <Button  asChild className="bg-accent text-extrabold   hover:bg-accent/90">
-              <Link href="#contact" className='text-bold '  >Contact</Link>
+              <Link href="#contact" className='text-bold font-headline  '  >Contact</Link>
             </Button>
           </div>
         </div>

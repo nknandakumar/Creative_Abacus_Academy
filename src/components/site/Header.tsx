@@ -13,7 +13,6 @@ const navLinks = [
   { name: 'Benefits', href: '#benefits' },
   { name: 'Gallery', href: '#gallery' },
   { name: 'FAQ', href: '#faq' },
-  { name: 'Contact', href: '#contact' },
 ];
 
 export default function Header() {
@@ -40,7 +39,7 @@ export default function Header() {
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center gap-2">
           <Sparkles className="h-7 w-7 text-primary" />
-          <span className="font-headline text-2xl font-bold">AbacusAce</span>
+          <span className="font-headline text-accent text-2xl font-bold">AbacusAce</span>
         </Link>
         <nav className="hidden items-center gap-6 md:flex">
           {navLinks.map((link) => (
@@ -55,7 +54,7 @@ export default function Header() {
         </nav>
         <div className="hidden md:block">
            <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
-             <Link href="#contact">Book a Free Trial</Link>
+             <Link href="#contact">Contact</Link>
            </Button>
         </div>
         <div className="md:hidden">
