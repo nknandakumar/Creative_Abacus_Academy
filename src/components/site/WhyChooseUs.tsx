@@ -3,52 +3,6 @@ import { UserCheck, Award, GraduationCap, Trophy } from 'lucide-react';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
 
-const features = [
-  {
-    icon: <Award className="h-8 w-8 text-amber-500" />,
-    title: 'ISO-Certified Excellence',
-    description: 'An assurance of quality and standardized education in Abacus & Vedic Maths.',
-    className: 'md:col-span-2 md:row-span-6',
-    content: (
-        <Image 
-            src="https://placehold.co/400x600.png"
-            alt="ISO Certificate"
-            width={400}
-            height={600}
-            className="w-full h-full object-cover mt-4 rounded-lg"
-            data-ai-hint="certificate award"
-        />
-    )
-  },
-  {
-    icon: <UserCheck className="h-8 w-8 text-indigo-500" />,
-    title: 'Expert Trainers',
-    description: 'With over 15 years of combined experience, our trainers are dedicated to nurturing each child\'s potential.',
-    className: 'md:col-span-2 md:row-span-3 md:col-start-3',
-  },
-  {
-    icon: <GraduationCap className="h-8 w-8 text-sky-500" />,
-    title: 'Holistic Brain Development',
-    description: 'We go beyond math, enhancing focus, memory, and confidence through our specialized curriculum.',
-    className: 'md:col-span-2 md:row-span-3 md:col-start-3 md:row-start-4',
-  },
-  {
-    icon: <Trophy className="h-8 w-8 text-lime-500" />,
-    title: 'Championship Prep',
-    description: 'We coach for regional & national finger abacus exams, turning students into champions.',
-    className: 'md:col-span-2 md:row-span-6 md:col-start-5 md:row-start-1',
-    content: (
-        <Image 
-            src="https://placehold.co/400x600.png"
-            alt="Student with trophy"
-            width={400}
-            height={600}
-            className="w-full h-full object-cover mt-4 rounded-lg"
-            data-ai-hint="student trophy"
-        />
-    )
-  },
-];
 
 export default function WhyChooseUs() {
   return (
@@ -62,31 +16,86 @@ export default function WhyChooseUs() {
             We provide a unique learning experience that sets the foundation for your child&apos;s future success.
           </p>
         </div>
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-6 md:grid-rows-6 gap-4 md:h-[600px] lg:h-[800px]">
-            {features.map((feature) => (
-                <Card 
-                  key={feature.title} 
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-6 md:grid-rows-5 gap-4 md:h-[600px] lg:h-[500px]">
+
+          {/* ISO-Certified Excellence Card */}
+          <Card
+            className={cn(
+              "p-6 bg-[#FCD0D1] rounded-2xl flex flex-col justify-between  ",
+              'md:col-span-2 md:row-span-4'
+            )}
+          >
+            <div className='flex flex-col'>
+
+              <CardHeader className="p-0">
+                <CardTitle className="font-headline text-xl lg:text-3xl font-bold">Two Convineint Location </CardTitle>
+              </CardHeader>
+              <CardDescription className="mt-2 text-muted-foreground text-sm lg:text-base">
+
+              </CardDescription>
+            </div>
+
+          </Card>
+
+
+          <Card
+            className={cn(
+              "p-6 bg-[#FBE8B3]  rounded-2xl flex flex-col justify-between ",
+              'md:col-span-2 md:row-span-2 md:col-start-3'
+            )}
+          >
+            
+            <div className='flex flex-col'>
+              
+                    <CardHeader className="p-0">
+                      <CardTitle className="font-headline text-xl lg:text-2xl font-bold">Expert Trainers</CardTitle>
+                    </CardHeader>
+                    <CardDescription className="mt-2 text-muted-foreground text-sm lg:text-base">
+                      With over 15 years of combined experience, our trainers are dedicated to nurturing each child&apos;s potential.
+                    </CardDescription>
+                  </div>
+                </Card>
+
+                {/* Holistic Brain Development Card */}
+                <Card
                   className={cn(
-                    "p-6 shadow-lg rounded-2xl flex flex-col justify-between transition-transform hover:scale-105", 
-                    feature.className
+                    "p-6 bg-[#CDFAD2] rounded-2xl flex flex-col justify-between ",
+                    'md:col-span-2 md:row-span-2 md:col-start-3 md:row-start-3'
                   )}
                 >
-                    <div className='flex flex-col'>
-                        <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-background dark:bg-slate-800 ring-4 ring-background">
-                           {feature.icon}
-                        </div>
-                        <CardHeader className="p-0">
-                            <CardTitle className="font-headline text-xl lg:text-2xl font-bold">{feature.title}</CardTitle>
-                        </CardHeader>
-                        <CardDescription className="mt-2 text-muted-foreground text-sm lg:text-base">
-                            {feature.description}
-                        </CardDescription>
-                    </div>
-                    {feature.content && <CardContent className="p-0 mt-auto pt-4 flex-grow">{feature.content}</CardContent>}
+                  <div className='flex flex-col'>
+
+                    <CardHeader className="p-0">
+                      <CardTitle className="font-headline text-xl lg:text-2xl font-bold">Holistic Brain Development</CardTitle>
+                    </CardHeader>
+                    <CardDescription className="mt-2 text-muted-foreground text-sm lg:text-base">
+                      We go beyond math, enhancing focus, memory, and confidence through our specialized curriculum.
+                    </CardDescription>
+                  </div>
                 </Card>
-            ))}
-        </div>
-      </div>
-    </section>
-  );
+
+                {/* Championship Prep Card */}
+                <Card
+                  className={cn(
+                    "p-6 bg-[#080808]  rounded-2xl flex flex-col justify-between ",
+                    'md:col-span-2 md:row-span-4 md:col-start-5 md:row-start-1'
+                  )}
+                >
+                  <div className='flex flex-col'>
+
+                    <CardHeader className="p-0">
+                      <CardTitle className="font-headline text-white text-xl lg:text-2xl font-bold">Championship Prep</CardTitle>
+                    </CardHeader>
+                    <CardDescription className="mt-2 text-muted-foreground text-sm lg:text-base">
+                      We coach for regional & national finger abacus exams, turning students into champions.
+                    </CardDescription>
+                  </div>
+
+                </Card>
+              </div>
+
+
+            </div>
+          </section>
+          );
 }
