@@ -1,36 +1,38 @@
-import { Button } from '@/components/ui/button';
-import Image from 'next/image';
 import Link from 'next/link';
+import Image from 'next/image';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 import { Star } from 'lucide-react';
 
 export default function Hero() {
   return (
-    <section id="home" className="w-full py-20 md:py-32 lg:py-40">
-      <div className="container mx-auto flex flex-col items-center justify-center px-4 text-center md:px-6">
-        <div className="flex items-center justify-center rounded-full border border-yellow-300 bg-yellow-50 px-4 py-1 text-sm font-medium text-yellow-800">
-          <Star className="mr-2 h-4 w-4 fill-yellow-400 text-yellow-600" />
-          ISO-Certified Excellence
+    <section id="home" className="w-full py-12 bg-secondary md:py-24 lg:py-32">
+      <div className="container px-4 md:px-6">
+        <div className="flex flex-col items-center space-y-6 text-center">
+          <Badge variant="outline" className="py-1 px-4 rounded-full border-primary/20 bg-primary/10">
+            <Star className="w-4 h-4 mr-2 text-primary" />
+            <span className="font-semibold text-primary">ISO-Certified Excellence</span>
+          </Badge>
+          <h1 className="font-headline text-4xl font-extrabold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl !leading-tight">
+            Best Abacus Classes in Shivamogga & Beyond to <span className="text-primary">Supercharge Young Minds</span>
+          </h1>
+          <p className="max-w-[700px] text-muted-foreground md:text-xl">
+            ISO-Certified Abacus & Vedic Maths Training | Levels 0–8 | Championship Prep | 100+ Students Trained
+          </p>
+          <div className="w-full max-w-sm">
+            <Button size="lg" asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
+              <Link href="#contact">Book a Free Trial Class</Link>
+            </Button>
+          </div>
         </div>
-        <h1 className="mt-6 font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-          Welcome to <span className="text-orange-400">Creative Abacus Academy</span>
-        </h1>
-        <p className="mx-auto mt-4 max-w-3xl text-lg text-muted-foreground md:text-xl">
-          Best Abacus Classes in Shivamogga to Supercharge Young Minds
-        </p>
-        <div className="mt-8">
-          <Button size="lg" asChild>
-            <Link href="#contact">Book a Free Trial Class</Link>
-          </Button>
-        </div>
-        <div className="mt-16 w-full max-w-4xl">
-           <Image
-            src="https://placehold.co/1000x600.png"
-            alt="An abacus representing mental math education"
-            width={1000}
+        <div className="mt-12 md:mt-16 flex justify-center">
+          <Image
+            src="https://placehold.co/1200x600.png"
+            alt="3D Abacus Illustration"
+            width={1200}
             height={600}
-            className="h-auto w-full rounded-lg object-contain shadow-2xl"
-            data-ai-hint="abacus education"
-            priority
+            className="w-full max-w-[80%] h-auto object-contain rounded-3xl"
+            data-ai-hint="abacus 3d illustration"
           />
         </div>
       </div>
