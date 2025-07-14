@@ -20,14 +20,14 @@ export default function WhyChooseUs() {
   const avatarSrc = 'https://pagedone.io/asset/uploads/1704275541.png';
 
   return (
-    <section id="why-choose-us" className="w-full py-12 md:py-24 lg:py-32">
+    <section id="why-choose-us" className="w-full bg-[#F8F8F8] py-12 md:py-24 lg:py-32">
       <div className="container mx-auto px-4 md:px-6">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
             Why Choose Us?
           </h2>
           <p className="mt-4 text-muted-foreground md:text-xl">
-            We provide a unique learning experience that sets the foundation for your child&apos;s future success.
+          Discover what makes us the <span className=' font-bold' >best abacus center in Shivamogga</span> with ISO certification and proven track record.
           </p>
         </div>
         <div className="mt-12 grid grid-cols-1 md:grid-cols-6 md:grid-rows-5 gap-4 md:h-[600px] lg:h-[500px]">

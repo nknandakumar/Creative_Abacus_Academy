@@ -9,7 +9,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { Card, CardContent } from '@/components/ui/card';
-import { Mail, MapPin, Phone, Clock, FileText } from 'lucide-react';
+import { Mail, MapPin, Phone, Clock, FileText, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 
 const formSchema = z.object({
@@ -52,58 +52,78 @@ export default function Contact() {
         </div>
         <div className="mt-12 grid gap-12 lg:grid-cols-5">
           <div className="lg:col-span-2">
-            <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                    <MapPin className="h-6 w-6 text-primary" />
-                    </div>
+            <div className="space-y-8">
+              <div>
+                <h3 className="text-2xl font-bold mb-4">Get in Touch</h3>
+                <div className="space-y-4">
+                  <Link href="https://maps.app.goo.gl/r6fJ9FkPZ3tJ3S9M9" target="_blank" className="block">
+                    <Card className="p-4 hover:bg-muted/50 transition-colors">
+                      <div className="flex items-start gap-4">
+                        <MapPin className="h-6 w-6 text-primary mt-1" />
+                        <div>
+                          <p className="font-semibold">Gandhinagar Branch</p>
+                          <p className="text-sm text-muted-foreground">2nd Cross, Beside Vidhathri Bhavan, Opp. Arun Ice Cream, Shimoga</p>
+                        </div>
+                      </div>
+                    </Card>
+                  </Link>
+                  <Link href="https://maps.app.goo.gl/vN38R8r5w6J5WqC76" target="_blank" className="block">
+                    <Card className="p-4 hover:bg-muted/50 transition-colors">
+                      <div className="flex items-start gap-4">
+                        <MapPin className="h-6 w-6 text-primary mt-1" />
+                        <div>
+                          <p className="font-semibold">Devraj Aras Badavane Branch</p>
+                          <p className="text-sm text-muted-foreground">Somina Koppa, Shivamogga</p>
+                        </div>
+                      </div>
+                    </Card>
+                  </Link>
+                </div>
+              </div>
+              <Card className="p-4">
+                <div className="space-y-4">
+                  <div className="flex items-start gap-4">
+                    <Phone className="h-5 w-5 text-primary mt-1" />
                     <div>
-                    <h3 className="text-xl font-semibold">Our Branches</h3>
-                    <p className="text-muted-foreground">**Gandhinagar:** 2nd Cross, Beside Vidhathri Bhavan, Opp. Arun Ice Cream, Shimoga</p>
-                    <p className="text-muted-foreground">**Devraj Aras Badavane:** Somina Koppa, Shivamogga</p>
-                    <Button variant="link" asChild className="p-0 h-auto mt-2">
-                        <Link href="https://maps.google.com" target='_blank'>Get Directions on Google Maps</Link>
-                    </Button>
+                      <p className="font-semibold">Phone/WhatsApp</p>
+                      <p className="text-sm text-muted-foreground">96634 44851</p>
                     </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                  <Phone className="h-6 w-6 text-primary" />
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <Mail className="h-5 w-5 text-primary mt-1" />
+                    <div>
+                      <p className="font-semibold">Email</p>
+                      <p className="text-sm text-muted-foreground">info@creativeabacus.com</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <Clock className="h-5 w-5 text-primary mt-1" />
+                    <div>
+                      <p className="font-semibold">School Hours</p>
+                      <p className="text-sm text-muted-foreground">Mon–Sat: 10 AM–6 PM</p>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-xl font-semibold">Phone</h3>
-                  <p className="text-muted-foreground">96634 44851</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                  <Mail className="h-6 w-6 text-primary" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold">Email</h3>
-                  <p className="text-muted-foreground">info@creativeabacus.com</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                  <Clock className="h-6 w-6 text-primary" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold">Hours</h3>
-                  <p className="text-muted-foreground">Mon–Sat: 10 AM–6 PM</p>
-                </div>
-              </div>
+              </Card>
+              <Button 
+                className="w-full bg-foreground text-background hover:bg-foreground/80 font-semibold py-6 text-lg"
+                asChild
+              >
+                <a href="https://www.google.com/maps/search/?api=1&query=Creative+Abacus+Academy+Shivamogga" target="_blank" rel="noopener noreferrer">
+                  Get Directions on Google Maps <ExternalLink className="ml-2 h-5 w-5" />
+                </a>
+              </Button>
             </div>
           </div>
           <div className="lg:col-span-3">
             <Card className="p-6 shadow-lg sm:p-8">
               <CardContent className="p-0">
-                 <div className="flex items-center gap-4 border border-dashed p-4 rounded-lg mb-6">
-                    <FileText className="h-8 w-8 text-primary" />
-                    <div>
-                        <h4 className="font-semibold">Required Documents:</h4>
-                        <p className="text-sm text-muted-foreground">Recent Photo, Aadhar Card, Birth Certificate</p>
-                    </div>
+                <div className="flex items-center gap-4 border border-dashed p-4 rounded-lg mb-6">
+                  <FileText className="h-8 w-8 text-primary" />
+                  <div>
+                    <h4 className="font-semibold">Required Documents:</h4>
+                    <p className="text-sm text-muted-foreground">Recent Photo, Aadhar Card, Birth Certificate</p>
+                  </div>
                 </div>
                 <Form {...form}>
                   <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
