@@ -8,21 +8,18 @@ export default function Hero() {
  
 
   return (
-    <section id="home" className="w-full py-12 bg-[#F8F8F8] md:py-24 lg:py-32">
+    <section id="home" className="w-full mt-10 py-12 pt-14 bg-[#F8F8F8] md:py-24 lg:py-32">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center space-y-6 text-center">
-          <Badge variant="outline" className="py-1 px-4 rounded-full border-primary/20 bg-primary/10">
-            <Star className="w-4 h-4 mr-2 text-primary" />
-            <span className="font-semibold text-primary">ISO-Certified Excellence</span>
-          </Badge>
+        
           <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-6xl !leading-tight">
-          Welcome to <span className='text-accent ' >Creative Abacus Academy</span> Best Abacus Classes in Shivamogga
+          Welcome to <span className='text-accent ' >Creative Abacus Academy</span> 
           </h1>
           <p className="max-w-[700px] text-muted-foreground md:text-xl">
-          Unlock sharper focus, faster math skills, and unstoppable confidence through engaging, brain-boosting abacus training for kids
+          Best Abacus Classes in Shivamogga: Boost focus, speed, and confidence with fun, brain-powered math training for kids
           </p>
           <div className="w-full ">
-            <Button  asChild className="bg-accent text-extrabold   hover:bg-accent/90">
+            <Button  asChild className="bg-[#3C83F6] text-extrabold font-headline rounded-full px-6  hover:bg-accent/90">
               <Link href="#contact" className='text-bold font-headline  '  >Contact</Link>
             </Button>
           </div>

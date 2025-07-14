@@ -67,8 +67,11 @@ export default function Header() {
             </Link>
           ))}
         </nav>
-        <div className="hidden md:block">
-          <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
+        <div className="hidden md:flex gap-4">
+        <Button asChild className="bg-accent rounded-full px-4 font-headline text-accent-foreground hover:bg-accent/90">
+            <Link href="#contact">Call</Link>
+          </Button>
+          <Button asChild className="bg-accent rounded-full font-headline text-accent-foreground hover:bg-accent/90">
             <Link href="#contact">Contact</Link>
           </Button>
         </div>
@@ -101,10 +104,18 @@ export default function Header() {
                 <Button
                   asChild
                   size="lg"
-                  className="w-full bg-accent text-accent-foreground hover:bg-accent/90"
+                  className="w-full bg-accent rounded-full text-accent-foreground hover:bg-accent/90"
                   onClick={closeSheet}
                 >
-                  <Link href="#contact">Book a Free Trial</Link>
+                  <Link href="#contact">Call</Link>
+                </Button>
+                <Button
+                  asChild
+                  size="lg"
+                  className="w-full bg-accent rounded-full text-accent-foreground hover:bg-accent/90"
+                  onClick={closeSheet}
+                >
+                  <Link href="#contact">Contact</Link>
                 </Button>
               </div>
             </SheetContent>

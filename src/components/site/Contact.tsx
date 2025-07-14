@@ -54,67 +54,66 @@ export default function Contact() {
          <span className='font-bold' >Contact the best abacus center in Shivamogga</span> today and Enquiry
           </p>
         </div>
-        <div className="mt-12 grid gap-12 lg:grid-cols-5 ">
-          <div className="lg:col-span-2">
-            <div className="space-y-8">
-              <Card className="p-4 shadow-sm">
-                <h3 className="text-xl font-bold mb-4">Contact Information</h3>
-                <div className="space-y-4">
-                  <div className="flex items-start gap-4">
-                    <Phone className="h-5 w-5 text-primary mt-1" />
-                    <div>
-                      <p className="font-semibold">Phone/WhatsApp</p>
-                      <p className="text-sm text-muted-foreground">96634 44851</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <Mail className="h-5 w-5 text-primary mt-1" />
-                    <div>
-                      <p className="font-semibold">Email</p>
-                      <p className="text-sm text-muted-foreground">info@creativeabacus.com</p>
-                    </div>
-                  </div>
-                   <div className="flex items-start gap-4">
-                    <Clock className="h-5 w-5 text-primary mt-1" />
-                    <div>
-                      <p className="font-semibold">School Hours</p>
-                      <p className="text-sm text-muted-foreground">Mon–Sat: 10 AM–6 PM</p>
-                    </div>
+        <div className="mt-12 grid grid-cols-1 gap-12 lg:grid-cols-5">
+          <div className="space-y-8 lg:col-span-2">
+            <Card className="p-6 shadow-sm">
+              <h3 className="text-xl font-headline font-bold mb-4">Contact Information</h3>
+              <div className="space-y-4">
+                <div className="flex items-start gap-4">
+                  <Phone className="h-5 w-5 text-primary mt-1" />
+                  <div>
+                    <p className="font-headline font-semibold">Phone/WhatsApp</p>
+                    <p className="text-sm text-muted-foreground">96634 44851</p>
                   </div>
                 </div>
-              </Card>
-              <div className="space-y-6">
-                <Card className="p-4 shadow-sm">
-                  <div className="flex items-start gap-4">
-                    <MapPin className="h-6 w-6 text-primary mt-1" />
-                    <div>
-                      <p className="font-semibold">Gandhinagar Branch</p>
-                      <p className="text-sm text-muted-foreground">2nd Cross, Beside Vidhathri Bhavan, Opp. Arun Ice Cream, Shimoga</p>
-                    </div>
+                <div className="flex items-start gap-4">
+                  <Mail className="h-5 w-5 text-primary mt-1" />
+                  <div>
+                    <p className="font-headline font-semibold">Email</p>
+                    <p className="text-sm text-muted-foreground">info@creativeabacus.com</p>
                   </div>
-                  <Button asChild variant="outline" className="w-full mt-4">
-                     <a href="https://maps.app.goo.gl/r6fJ9FkPZ3tJ3S9M9" target="_blank" rel="noopener noreferrer">
-                        Get Directions <ExternalLink className="ml-2 h-4 w-4" />
-                     </a>
-                  </Button>
-                </Card>
-                 <Card className="p-4 shadow-sm">
-                  <div className="flex items-start gap-4">
-                    <MapPin className="h-6 w-6 text-primary mt-1" />
-                    <div>
-                      <p className="font-semibold">Devraj Aras Badavane Branch</p>
-                      <p className="text-sm text-muted-foreground">Somina Koppa, Shivamogga</p>
-                    </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <Clock className="h-5 w-5 text-primary mt-1" />
+                  <div>
+                    <p className="font-headline font-semibold">School Hours</p>
+                    <p className="text-sm text-muted-foreground">Mon–Sat: 10 AM–6 PM</p>
                   </div>
-                   <Button asChild variant="outline" className="w-full mt-4">
-                     <a href="https://maps.app.goo.gl/vN38R8r5w6J5WqC76" target="_blank" rel="noopener noreferrer">
-                        Get Directions <ExternalLink className="ml-2 h-4 w-4" />
-                     </a>
-                  </Button>
-                </Card>
+                </div>
               </div>
-            </div>
+            </Card>
+
+            <Card className="p-6 shadow-sm">
+              <div className="flex items-start gap-4">
+                <MapPin className="h-6 w-6 text-primary mt-1" />
+                <div>
+                  <p className="font-headline font-semibold">Gandhinagar Branch</p>
+                  <p className="text-sm text-muted-foreground">2nd Cross, Beside Vidhathri Bhavan, Opp. Arun Ice Cream, Shimoga</p>
+                </div>
+              </div>
+              <Button asChild variant="outline" className="w-full bg-primary text-primary-foreground font-headline mt-4">
+                <a href="https://maps.app.goo.gl/r6fJ9FkPZ3tJ3S9M9" target="_blank" rel="noopener noreferrer">
+                  Get Directions <ExternalLink className="ml-2 h-4 w-4" />
+                </a>
+              </Button>
+            </Card>
+
+            <Card className="p-6 shadow-sm">
+              <div className="flex items-start gap-4">
+                <MapPin className="h-6 w-6 text-primary mt-1" />
+                <div>
+                  <p className="font-headline font-semibold">Devraj Aras Badavane Branch</p>
+                  <p className="text-sm text-muted-foreground">Somina Koppa, Shivamogga</p>
+                </div>
+              </div>
+              <Button asChild variant="outline" className="w-full bg-primary text-primary-foreground font-headline mt-4">
+                <a href="https://maps.app.goo.gl/vN38R8r5w6J5WqC76" target="_blank" rel="noopener noreferrer">
+                  Get Directions <ExternalLink className="ml-2 h-4 w-4" />
+                </a>
+              </Button>
+            </Card>
           </div>
+
           <div className="lg:col-span-3">
             <Card className="p-6 shadow-lg sm:p-8">
               <h3 className="text-2xl font-bold mb-2">Enquiry & Admission Form</h3>
@@ -189,7 +188,7 @@ export default function Contact() {
                         </FormItem>
                       )}
                     />
-                    <Button type="submit" size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
+                    <Button type="submit" size="lg" className="w-full rounded-full font-headline bg-accent text-accent-foreground hover:bg-accent/90">
                       Submit Enquiry & Secure Admission Slot
                     </Button>
                   </form>
