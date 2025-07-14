@@ -1,10 +1,24 @@
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { UserCheck, Award, GraduationCap, Trophy } from 'lucide-react';
 import Image from 'next/image';
-import { cn } from '@/lib/utils';
+import badge from "../../../public/badge1.svg"
+import location from "../../../public/location1.svg"
+import certificate from "../../../public/certificate.svg"
+import { cn } from "@/lib/utils";
+import { Plus } from 'lucide-react';
+import { NumberTicker } from "@/components/magicui/number-ticker";
 
+export function NumberTickerDemo() {
+  return (
+    <NumberTicker
+      value={100}
+      className="whitespace-pre-wrap text-8xl font-medium tracking-tighter text-black dark:text-white"
+    />
+  );
+}
 
 export default function WhyChooseUs() {
+  const avatarSrc = 'https://pagedone.io/asset/uploads/1704275541.png';
+
   return (
     <section id="why-choose-us" className="w-full py-12 md:py-24 lg:py-32">
       <div className="container mx-auto px-4 md:px-6">
@@ -21,80 +35,97 @@ export default function WhyChooseUs() {
           {/* ISO-Certified Excellence Card */}
           <Card
             className={cn(
-              "p-6 rounded-2xl flex flex-col justify-between  ",
+              "p-6 bg-[#FCD0D1] rounded-2xl flex md:flex-col gap-2 justify-between  ",
               'md:col-span-2 md:row-span-4'
             )}
           >
-            <div className='flex flex-col'>
+          
 
               <CardHeader className="p-0">
-                <CardTitle className="font-headline text-xl lg:text-3xl font-bold">Two Convineint Location </CardTitle>
+                <CardTitle className="font-headline text-3xl lg:text-4xl font-bold">Two Convineint Location </CardTitle>
               </CardHeader>
-              <CardDescription className="mt-2 text-muted-foreground text-sm lg:text-base">
-
-              </CardDescription>
-            </div>
-
+             
+            
+            <Image src={location} width={80} height={80} className='md:w-full md:h-full md:overflow-hidden' alt="Location SVG" />
           </Card>
 
 
           <Card
             className={cn(
-              "p-6 bg-[#FBE8B3]  rounded-2xl flex flex-col justify-between ",
+              "p-4 bg-[#DFF15E]  rounded-2xl flex flex-col gap-4 ",
               'md:col-span-2 md:row-span-2 md:col-start-3'
             )}
           >
-            
-            <div className='flex flex-col'>
-              
-                    <CardHeader className="p-0">
-                      <CardTitle className="font-headline text-xl lg:text-2xl font-bold">Expert Trainers</CardTitle>
-                    </CardHeader>
-                    <CardDescription className="mt-2 text-muted-foreground text-sm lg:text-base">
-                      With over 15 years of combined experience, our trainers are dedicated to nurturing each child&apos;s potential.
-                    </CardDescription>
+
+            <div className="flex flex-row  gap-2 justify-start items-center ">
+
+              <div className="flex  -space-x-4">
+                {[...Array(5)].map((_, i) => (
+                  <div key={i} className="w-10 h-10 border-2 border-white rounded-full overflow-hidden">
+                    <Image
+                      src={avatarSrc}
+                      alt="Stacked rounded avatar"
+                      width={50}
+                      height={50}
+                      className="rounded-full"
+                    />
                   </div>
-                </Card>
-
-                {/* Holistic Brain Development Card */}
-                <Card
-                  className={cn(
-                    "p-6 bg-[#CDFAD2] rounded-2xl flex flex-col justify-between ",
-                    'md:col-span-2 md:row-span-2 md:col-start-3 md:row-start-3'
-                  )}
-                >
-                  <div className='flex flex-col'>
-
-                    <CardHeader className="p-0">
-                      <CardTitle className="font-headline text-xl lg:text-4xl font-bold">Professional </CardTitle>
-                      <CardTitle className="font-headline text-xl lg:text-4xl font-bold">     Teachers </CardTitle>
-                    </CardHeader>
-                   
-                  </div>
-                </Card>
-
-                {/* Championship Prep Card */}
-                <Card
-                  className={cn(
-                    "p-6 bg-[#080808]  rounded-2xl flex flex-col justify-between ",
-                    'md:col-span-2 md:row-span-4 md:col-start-5 md:row-start-1'
-                  )}
-                >
-                  <div className='flex flex-col'>
-
-                    <CardHeader className="p-0">
-                      <CardTitle className="font-headline text-white text-xl lg:text-2xl font-bold">Championship Prep</CardTitle>
-                    </CardHeader>
-                    <CardDescription className="mt-2 text-muted-foreground text-sm lg:text-base">
-                      We coach for regional & national finger abacus exams, turning students into champions.
-                    </CardDescription>
-                  </div>
-
-                </Card>
+                ))}
               </div>
-
-
+              <NumberTicker
+                value={100}
+                className=" font-extrabold text-4xl text-black dark:text-white"
+              /> <span className="text-4xl font-extrabold text-black dark:text-white" >+</span>
             </div>
-          </section>
-          );
+
+
+
+
+            <CardHeader className="p-0">
+              <CardTitle className="font-headline text-3xl lg:text-4xl font-bold">Students Trained</CardTitle>
+            </CardHeader>
+
+
+          </Card>
+
+          {/* Holistic Brain Development Card */}
+          <Card
+            className={cn(
+              "p-6 bg-[#B2A0F0] rounded-2xl flex flex-col justify-center  ",
+              'md:col-span-2 md:row-span-2 md:col-start-3 md:row-start-3'
+            )}
+          >
+            <div className='flex items-start md:flex-col lg:flex-row  '>
+
+
+              <Image src={badge} width={80} height={80} className=' md:w-[100] md:h-[100]   lg:w-[150] lg:h-[150]' alt="SVG Badge" />
+              <CardHeader className="p-0">
+                <CardTitle className="font-headline text-3xl lg:text-4xl font-bold">Professional </CardTitle>
+                <CardTitle className="font-headline text-3xl lg:text-4xl font-bold flex gap-2 "> {"   "}   Teachers </CardTitle>
+              </CardHeader>
+            </div>
+          </Card>
+
+          {/* Championship Prep Card */}
+          <Card
+            className={cn(
+              "p-6 bg-[#080808]  rounded-2xl flex md:flex-col justify-between ",
+              'md:col-span-2 md:row-span-4 md:col-start-5 md:row-start-1'
+            )}
+          >
+            
+
+              <CardHeader className="p-0 md:text-center  md:order-2  ">
+                <CardTitle className="font-headline text-white text-3xl  font-bold">ISO Certified Academy</CardTitle>
+              </CardHeader>
+             
+            
+            <Image src={certificate} width={80} height={80} className='md:w-full md:h-full md:order-1 md:overflow-hidden' alt="Location SVG" />
+          </Card>
+        </div>
+
+
+      </div>
+    </section>
+  );
 }
