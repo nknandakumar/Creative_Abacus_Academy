@@ -55,29 +55,35 @@ export default function Contact() {
             <div className="space-y-8">
               <div>
                 <h3 className="text-2xl font-bold mb-4">Get in Touch</h3>
-                <div className="space-y-4">
-                  <Link href="https://maps.app.goo.gl/r6fJ9FkPZ3tJ3S9M9" target="_blank" className="block">
-                    <Card className="p-4 hover:bg-muted/50 transition-colors">
-                      <div className="flex items-start gap-4">
-                        <MapPin className="h-6 w-6 text-primary mt-1" />
-                        <div>
-                          <p className="font-semibold">Gandhinagar Branch</p>
-                          <p className="text-sm text-muted-foreground">2nd Cross, Beside Vidhathri Bhavan, Opp. Arun Ice Cream, Shimoga</p>
-                        </div>
+                <div className="space-y-6">
+                  <Card className="p-4">
+                    <div className="flex items-start gap-4">
+                      <MapPin className="h-6 w-6 text-primary mt-1" />
+                      <div>
+                        <p className="font-semibold">Gandhinagar Branch</p>
+                        <p className="text-sm text-muted-foreground">2nd Cross, Beside Vidhathri Bhavan, Opp. Arun Ice Cream, Shimoga</p>
                       </div>
-                    </Card>
-                  </Link>
-                  <Link href="https://maps.app.goo.gl/vN38R8r5w6J5WqC76" target="_blank" className="block">
-                    <Card className="p-4 hover:bg-muted/50 transition-colors">
-                      <div className="flex items-start gap-4">
-                        <MapPin className="h-6 w-6 text-primary mt-1" />
-                        <div>
-                          <p className="font-semibold">Devraj Aras Badavane Branch</p>
-                          <p className="text-sm text-muted-foreground">Somina Koppa, Shivamogga</p>
-                        </div>
+                    </div>
+                    <Button asChild variant="outline" className="w-full mt-4">
+                       <a href="https://maps.app.goo.gl/r6fJ9FkPZ3tJ3S9M9" target="_blank" rel="noopener noreferrer">
+                          Get Directions <ExternalLink className="ml-2 h-4 w-4" />
+                       </a>
+                    </Button>
+                  </Card>
+                   <Card className="p-4">
+                    <div className="flex items-start gap-4">
+                      <MapPin className="h-6 w-6 text-primary mt-1" />
+                      <div>
+                        <p className="font-semibold">Devraj Aras Badavane Branch</p>
+                        <p className="text-sm text-muted-foreground">Somina Koppa, Shivamogga</p>
                       </div>
-                    </Card>
-                  </Link>
+                    </div>
+                     <Button asChild variant="outline" className="w-full mt-4">
+                       <a href="https://maps.app.goo.gl/vN38R8r5w6J5WqC76" target="_blank" rel="noopener noreferrer">
+                          Get Directions <ExternalLink className="ml-2 h-4 w-4" />
+                       </a>
+                    </Button>
+                  </Card>
                 </div>
               </div>
               <Card className="p-4">
@@ -105,14 +111,6 @@ export default function Contact() {
                   </div>
                 </div>
               </Card>
-              <Button 
-                className="w-full bg-foreground text-background hover:bg-foreground/80 font-semibold py-6 text-lg"
-                asChild
-              >
-                <a href="https://www.google.com/maps/search/?api=1&query=Creative+Abacus+Academy+Shivamogga" target="_blank" rel="noopener noreferrer">
-                  Get Directions on Google Maps <ExternalLink className="ml-2 h-5 w-5" />
-                </a>
-              </Button>
             </div>
           </div>
           <div className="lg:col-span-3">
