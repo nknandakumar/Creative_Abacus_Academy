@@ -4,6 +4,9 @@ import { Toaster } from "@/components/ui/toaster"
 import { Poppins, PT_Sans } from 'next/font/google';
 import { cn } from '@/lib/utils';
 
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 const poppins = Poppins({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700', '900'],

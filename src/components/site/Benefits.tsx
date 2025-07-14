@@ -1,65 +1,109 @@
-import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Target, Lightbulb, ShieldCheck, Sparkles, Brain, Ear } from 'lucide-react';
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const benefits = [
   {
-    icon: <Sparkles className="h-8 w-8 text-primary" />,
-    title: 'Enhances Memory & Concentration',
-    description: 'Sharpens focus and improves memory retention through mental exercises.',
+    title: "Enhances Memory & Concentration",
+    description: "Sharpens focus and improves memory retention through mental exercises.",
+    image: "https://images.unsplash.com/photo-1598518619776-eae3f8a34eac?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    icon: <Lightbulb className="h-8 w-8 text-primary" />,
-    title: 'Boosts Mental Calculation Speed',
-    description: 'Develops lightning-fast calculation abilities without calculator dependency.',
+    title: "Boosts Mental Calculation Speed",
+    description: "Develops lightning-fast calculation abilities without calculator dependency.",
+    image: "https://images.unsplash.com/photo-1711409645921-ef3db0501f96?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    icon: <ShieldCheck className="h-8 w-8 text-primary" />,
-    title: 'Builds Confidence & Self-Discipline',
-    description: 'Mastering a new skill builds self-esteem and a positive attitude towards learning.',
+    title: "Builds Confidence & Self-Discipline",
+    description: "Mastering a new skill builds self-esteem and a positive attitude towards learning.",
+    image: "https://images.unsplash.com/photo-1625662171040-8d196a082232?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    icon: <Brain className="h-8 w-8 text-primary" />,
-    title: 'Improves Academic Performance',
-    description: 'Strong foundational skills in math positively impact overall academic success.',
+    title: "Improves Academic Performance",
+    description: "Strong foundational skills in math positively impact overall academic success.",
+    image: "https://images.unsplash.com/photo-1631047085941-a29e9730a7e6?q=80&w=1184&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    icon: <Target className="h-8 w-8 text-primary" />,
-    title: 'Sharpens Observation & Listening Skills',
-    description: 'Improves the ability to listen attentively and observe details accurately.',
+    title: "Sharpens Observation & Listening Skills",
+    description: "Improves the ability to listen attentively and observe details accurately.",
+    image: "https://images.unsplash.com/photo-1623287072502-de478853dc0f?q=80&w=1329&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    icon: <Sparkles className="h-8 w-8 text-primary" />,
-    title: 'Develops Logical & Visualization Abilities',
-    description: 'Enhances problem-solving skills and the ability to visualize complex problems.',
+    title: "Develops Logical & Visualization Abilities",
+    description: "Enhances problem-solving skills and the ability to visualize complex problems.",
+    image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
 
-export default function Benefits() {
+export default function AnimatedBenefits() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const imageContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const triggers: ScrollTrigger[] = [];
+
+    benefits.forEach((_, i) => {
+      triggers.push(
+        ScrollTrigger.create({
+          trigger: `.benefit-${i}`,
+          start: "top center",
+          end: "bottom center",
+          onEnter: () => setActiveIndex(i),
+          onEnterBack: () => setActiveIndex(i),
+        })
+      );
+    });
+
+    return () => {
+      triggers.forEach(trigger => trigger.kill());
+    };
+  }, []);
+
   return (
-    <section id="benefits" className="w-full bg-secondary py-12 md:py-24 lg:py-32">
-      <div className="container mx-auto grid items-center justify-center gap-4 px-4 text-center md:px-6">
-        <div className="space-y-3">
-          <h2 className="font-headline text-3xl font-bold tracking-tighter md:text-4xl/tight">
-            Why Abacus? Benefits for Your Child
+   <section id="benefits" className="py-12 md:py-24 lg:py-32 text-center " >
+   
+        <div className="mx-auto max-w-3xl pb-20 text-center">
+          <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+          Why Abacus? Benefits for Your Child
           </h2>
-          <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-            Abacus training is more than just math. It&apos;s a full-brain workout that develops essential life skills.
+          <p className="mt-4 text-muted-foreground md:text-xl">
+          Abacus training is more than just math. It&apos;s a full-brain workout that develops essential life skills.
           </p>
         </div>
-        <div className="mt-8 grid w-full grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {benefits.map((benefit) => (
-            <Card key={benefit.title} className="p-6 text-left shadow-sm">
-                <CardHeader className='flex-row items-center gap-4 p-0'>
-                   {benefit.icon}
-                   <CardTitle className="font-headline text-lg">{benefit.title}</CardTitle>
-                </CardHeader>
-                <CardDescription className="mt-4">
-                    {benefit.description}
-                </CardDescription>
-            </Card>
-          ))}
+    <section className="relative w-full min-h-screen  text-white">
+      
+      <div className="sticky top-0 h-screen w-full z-0">
+        <div ref={imageContainerRef} className="relative w-full h-full">
+          <Image
+            src={benefits[activeIndex].image}
+            alt={benefits[activeIndex].title}
+            fill
+            className="object-cover transition-opacity duration-700 ease-in-out"
+          />
+          <div className="absolute inset-0 bg-black/60" />
         </div>
       </div>
+
+      <div className="relative z-10">
+        {benefits.map((benefit, i) => (
+          <section
+            key={i}
+            className={`benefit-${i} flex items-center justify-center min-h-screen px-6 md:px-20`}
+          >
+            <div className="max-w-2xl text-center space-y-6">
+           
+              <h2 className="text-3xl md:text-6xl font-bold">{benefit.title}</h2>
+              <p className="text-lg md:text-2xl text-white/80">{benefit.description}</p>
+            </div>
+          </section>
+        ))}
+      </div>
     </section>
+     </section>
   );
 }
