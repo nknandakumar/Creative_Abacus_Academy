@@ -1,89 +1,109 @@
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { CheckCircle, FileText, UserPlus } from 'lucide-react';
-import Link from 'next/link';
+"use client";
+
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const programHighlights = [
-    {
-        icon: <CheckCircle className="h-6 w-6 text-accent" />,
-        text: 'Abacus Levels 0–8: Step-by-step finger abacus training & mental visualization'
-    },
-    {
-        icon: <CheckCircle className="h-6 w-6 text-accent" />,
-        text: 'Finger Abacus Championships: Coaching for regional and national exams'
-    },
-    {
-        icon: <CheckCircle className="h-6 w-6 text-accent" />,
-        text: 'Vedic Maths: Ancient speed math techniques for accuracy & fun'
-    },
-    {
-        icon: <CheckCircle className="h-6 w-6 text-accent" />,
-        text: 'Certification Exams: Periodic assessments with official certificates'
-    }
+  {
+    title: "Abacus Levels 0–8",
+    desc: "Step-by-step finger abacus training & mental visualization",
+    color: "bg-[#BDEE3B]",
+  },
+  {
+    title: "Vedic Maths",
+    desc: "Ancient speed math techniques for accuracy & fun",
+    color: "bg-black text-white",
+  },
+  {
+    title: "Jolly Phonics",
+    desc: "Fun and effective way to learn to read and write",
+    color: "bg-yellow-200",
+  },
+  {
+    title: "Handwriting Classes",
+    desc: "Improve legibility and speed for all ages",
+    color: "bg-blue-200",
+  },
+  {
+    title: "Language Basics",
+    desc: "Foundational understanding of various languages",
+    color: "bg-pink-300",
+  },
+  {
+    title: "NTT Training",
+    desc: "Comprehensive course for aspiring nursery teachers",
+    color: "bg-orange-300",
+  },
 ];
 
-const admissionProcess = [
-    {
-        icon: <UserPlus className="h-8 w-8 text-primary" />,
-        title: "Enquiry & Form",
-        description: "Complete the enquiry & admission form on our contact section.",
-    },
-    {
-        icon: <FileText className="h-8 w-8 text-primary" />,
-        title: "Submit Documents",
-        description: "Visit a branch with a recent photo, Aadhar card, and birth certificate copy.",
-    },
-    {
-        icon: <CheckCircle className="h-8 w-8 text-primary" />,
-        title: "Free Assessment",
-        description: "Schedule your free level assessment to find the perfect starting point.",
-    }
-]
-
 export default function Courses() {
+  const sectionRef = useRef(null);
+  const scrollRef = useRef(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const getToValue = () => -(scrollRef.current.scrollWidth - window.innerWidth);
+
+      gsap.fromTo(
+        scrollRef.current,
+        {
+          x: 0,
+        },
+        {
+          x: getToValue,
+          ease: "none",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top top",
+            end: () => `+=${scrollRef.current.scrollWidth - window.innerWidth}`,
+            scrub: true,
+            pin: true,
+            anticipatePin: 1,
+            invalidateOnRefresh: true,
+          },
+        }
+      );
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section id="courses" className="w-full py-12 md:py-24 lg:py-32">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="mx-auto max-w-3xl text-center">
-          <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-            Our Courses & Championships
-          </h2>
-          <p className="mt-4 text-muted-foreground md:text-xl">
-            Structured programs designed for comprehensive skill development and competitive success.
-          </p>
-        </div>
-        
-        <div className="mt-12 grid gap-12 lg:grid-cols-2">
-            <div className="space-y-6">
-                <h3 className="font-headline text-2xl font-bold">Program Highlights</h3>
-                 <ul className="space-y-4">
-                    {programHighlights.map((item, index) => (
-                        <li key={index} className="flex items-start gap-4">
-                            {item.icon}
-                            <span className="flex-1 text-muted-foreground">{item.text}</span>
-                        </li>
-                    ))}
-                </ul>
-                <Button asChild>
-                    <Link href="#contact">View Detailed Courses & Exam Details</Link>
-                </Button>
+    <section
+      id="courses"
+      ref={sectionRef}
+      className="horizontal w-screen h-[100vh] overflow-hidden bg-[#FFF8ED]"
+    >
+      <div className="pin-wrap h-full w-screen flex items-center justify-start">
+        <div className="animation-wrap flex gap-6 px-10 items-center" ref={scrollRef}>
+        <div className="shrink-0 w-[100vw] flex flex-col justify-center">
+            <h2 className="font-headline text-4xl md:text-5xl lg:text-7xl font-bold mb-4">
+              Our Courses <br/> with other programs
+            </h2>
+            <p className="max-w-2xl text-lg md:text-xl lg:2xl text-muted-foreground">
+              Structured programs designed for comprehensive skill development and competitive success.
+            </p>
+          </div>
+
+          {programHighlights.map((item, index) => (
+            <div
+              key={index}
+              className={`shrink-0 w-[70vw] md:w-[30vw] h-[350px] p-6 rounded-3xl ${item.color} flex flex-col gap-3`}
+            >
+              <div>
+                <div className="uppercase text-xs underline tracking-wide mb-4">Program</div>
+                <h3 className="text-4xl font-headline  md:text-5xl font-bold tight ">
+                  {item.title}
+                </h3>
+              </div>
+              <p className="text-base md:text-lg text-gray-800/80 dark:text-white/90 mt-4">
+                {item.desc}
+              </p>
             </div>
-            <div className="space-y-6">
-                <h3 className="font-headline text-2xl font-bold">Admission Process</h3>
-                <div className="grid gap-6">
-                    {admissionProcess.map((step, index) => (
-                         <Card key={index} className="p-6 shadow-sm">
-                            <CardHeader className='flex-row items-center gap-4 p-0'>
-                               {step.icon}
-                               <CardTitle className="font-headline text-lg">{step.title}</CardTitle>
-                            </CardHeader>
-                            <CardDescription className="mt-4">
-                                {step.description}
-                            </CardDescription>
-                        </Card>
-                    ))}
-                </div>
-            </div>
+          ))}
         </div>
       </div>
     </section>

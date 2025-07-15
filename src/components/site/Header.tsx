@@ -44,12 +44,12 @@ export default function Header() {
   const closeSheet = () => setIsSheetOpen(false);
 
   return (
-    <>
-    <header
+    <header className=' bg-[#FFF8ED]' >
+    <div
       className={cn(
-        'fixed top-0 hidden md:block z-50 w-full transition-transform duration-300 ease-in-out',
+        'fixed top-0  bg-[#FFF8ED] hidden md:block z-50 w-full transition-transform duration-300 ease-in-out',
         isScrollingUp ? 'translate-y-0' : '-translate-y-full',
-        isScrolled ? 'border-b bg-background/80 backdrop-blur-md' : 'bg-transparent'
+        isScrolled ? ' bg-[#FFF8ED] ' : ''
       )}
     >
       <div className="container mx-auto flex md:h-20 items-center justify-between px-4 md:px-6">
@@ -78,11 +78,11 @@ export default function Header() {
         </div>
     
       </div>
-    </header>
+    </div>
     <div className={cn(
-        'fixed top-0  md:hidden md:block z-50 transition-transform duration-300 ease-in-out',
+        'fixed top-0  md:hidden  z-50 transition-transform duration-300 ease-in-out',
         isScrollingUp ? 'translate-y-0' : '-translate-y-full',
-        isScrolled ? 'border-b bg-background/80 backdrop-blur-md' : 'bg-transparent'
+        isScrolled ? ' bg-[#FFF8ED]' : ''
       )} >
           <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
             <SheetTrigger asChild>
@@ -130,6 +130,6 @@ export default function Header() {
           </Sheet>
         </div>
      
-    </>
+    </header>
   );
 }

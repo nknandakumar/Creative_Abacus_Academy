@@ -8,19 +8,19 @@ export default function Hero() {
  
 
   return (
-    <section id="home" className="w-full mt-10 py-12 pt-14 bg-[#F8F8F8] md:py-24 lg:py-32">
+    <section id="home" className="w-full mt-10 py-12 pt-14 bg-[#FFF8ED] md:py-24 lg:py-32">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center space-y-6 text-center">
         
           <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-6xl !leading-tight">
           Welcome to <span className='text-accent ' >Creative Abacus Academy</span> 
           </h1>
-          <p className="max-w-[700px] text-muted-foreground md:text-xl">
+          <p className="max-w-[700px] text-muted-foreground text-[#8C8882] md:text-xl">
           Best Abacus Classes in Shivamogga: Boost focus, speed, and confidence with fun, brain-powered math training for kids
           </p>
           <div className="w-full ">
-            <Button  asChild className="bg-[#3C83F6] text-extrabold font-headline rounded-full px-6  hover:bg-accent/90">
-              <Link href="#contact" className='text-bold font-headline  '  >Contact</Link>
+            <Button  asChild className="bg-accent text-extrabold font-headline rounded-full px-8  hover:bg-accent/90">
+              <Link href="#contact" className='font-bold font-headline text-white '  >Contact</Link>
             </Button>
           </div>
         </div>

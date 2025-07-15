@@ -20,7 +20,7 @@ export default function WhyChooseUs() {
   const avatarSrc = 'https://pagedone.io/asset/uploads/1704275541.png';
 
   return (
-    <section id="why-choose-us" className="w-full bg-[#F8F8F8] py-12 md:py-24 lg:py-32">
+    <section id="why-choose-us" className="w-full  py-12 md:py-24 lg:py-32">
       <div className="container mx-auto px-4 md:px-6">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
@@ -32,10 +32,10 @@ export default function WhyChooseUs() {
         </div>
         <div className="mt-12 grid grid-cols-1 md:grid-cols-6 md:grid-rows-5 gap-4 md:h-[600px] lg:h-[500px]">
 
-          {/* ISO-Certified Excellence Card */}
+          {/* Location Card */}
           <Card
             className={cn(
-              "p-6 bg-[#FCD0D1] rounded-2xl flex md:flex-col gap-2 justify-between  ",
+              "p-6 bg-[#FCD0D1] rounded-3xl flex md:flex-col gap-2 justify-between  ",
               'md:col-span-2 md:row-span-4'
             )}
           >
@@ -49,10 +49,10 @@ export default function WhyChooseUs() {
             <Image src={location} width={80} height={80} className='md:w-full md:h-full md:overflow-hidden' alt="Location SVG" />
           </Card>
 
-
+ {/* Students Card */}
           <Card
             className={cn(
-              "p-4 bg-[#DFF15E]  rounded-2xl flex flex-col gap-4 ",
+              "p-4 bg-[#DFF15E]  rounded-3xl flex flex-col gap-4 ",
               'md:col-span-2 md:row-span-2 md:col-start-3'
             )}
           >
@@ -88,10 +88,10 @@ export default function WhyChooseUs() {
 
           </Card>
 
-          {/* Holistic Brain Development Card */}
+          {/* Teachers Card */}
           <Card
             className={cn(
-              "p-6 bg-[#B2A0F0] rounded-2xl flex flex-col justify-center  ",
+              "p-6 bg-[#B2A0F0] rounded-3xl flex flex-col justify-center  ",
               'md:col-span-2 md:row-span-2 md:col-start-3 md:row-start-3'
             )}
           >
@@ -106,10 +106,10 @@ export default function WhyChooseUs() {
             </div>
           </Card>
 
-          {/* Championship Prep Card */}
+          {/* ISO Certified Card */}
           <Card
             className={cn(
-              "p-6 bg-[#080808]  rounded-2xl flex md:flex-col justify-between ",
+              "p-6 bg-[#080808]  rounded-3xl flex md:flex-col justify-between ",
               'md:col-span-2 md:row-span-4 md:col-start-5 md:row-start-1'
             )}
           >
