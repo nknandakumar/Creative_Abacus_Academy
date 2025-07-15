@@ -12,11 +12,11 @@ export default function Cta() {
           </h2>
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button size="lg" asChild className="bg-accent rounded-full text-accent-foreground hover:bg-accent/90">
-              <Link href="#contact">Book Your Free Trial Class Now</Link>
+              <Link href="#contact">Call</Link>
             </Button>
-            <Button size="lg" className='rounded-full bg-[#22C55E] hover:bg-[#22C55E] ' variant="outline" asChild>
+            <Button size="lg" className='rounded-full bg-[#22C55E] text-white hover:bg-[#22C55E] ' variant="outline" asChild>
               <a href="https://wa.me/9663444851" target="_blank" rel="noopener noreferrer">
-               <Image src={whatsapp} alt="WhatsApp SVG"  width={40} height={40}  />
+               <Image src={whatsapp} alt="WhatsApp SVG"  width={25} height={25}  />
                 WhatsApp
               </a>
             </Button>

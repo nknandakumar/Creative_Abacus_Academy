@@ -16,7 +16,7 @@
     --secondary-foreground: 20 14.3% 4.1%;
     --muted: 48 20% 94%;
     --muted-foreground: 240 3.8% 46.1%;
-    --accent: 217 91% 60%;
+    --accent: 191 53% 25%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
@@ -44,7 +44,7 @@
     --secondary-foreground: 0 0% 98%;
     --muted: 0 0% 14.9%;
     --muted-foreground: 0 0% 63.9%;
-    --accent: 217 91% 60%;
+    --accent: 191 53% 25%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
@@ -70,3 +70,6 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
