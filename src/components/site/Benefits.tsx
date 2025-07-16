@@ -65,7 +65,7 @@ export default function AnimatedBenefits() {
   }, []);
 
   return (
-   <section id="benefits" className="py-12 md:py-24 lg:py-32 text-center " >
+   <section id="benefits" className="py-12 md:py-24 lg:py-32 bg-secondary text-center " >
    
         <div className="mx-auto max-w-3xl pb-20 text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
