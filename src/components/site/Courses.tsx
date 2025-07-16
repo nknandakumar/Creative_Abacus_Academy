@@ -101,7 +101,7 @@ export default function Courses() {
             {programHighlights.map((item, index) => (
               <div
                 key={index}
-                className={`shrink-0 w-[80vw] md:w-[70vw] md:w-[30vw] h-[350px] p-6 rounded-3xl ${item.color} flex flex-col gap-3`}
+                className={`shrink-0 w-[80vw]  md:w-[30vw] h-[350px] p-6 rounded-3xl ${item.color} flex flex-col gap-3`}
               >
                 <div>
                   <div className="uppercase text-xs underline tracking-wide mb-4">

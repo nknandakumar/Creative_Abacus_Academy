@@ -189,7 +189,7 @@ export default function Contact() {
                       )}
                     />
                     <Button type="submit" size="lg" className="w-full rounded-full font-headline bg-accent text-accent-foreground hover:bg-accent/90">
-                      Submit Enquiry & Secure Admission Slot
+                      Submit Enquiry 
                     </Button>
                   </form>
                 </Form>
