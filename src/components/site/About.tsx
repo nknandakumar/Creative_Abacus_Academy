@@ -2,8 +2,8 @@ import { MapPin } from "lucide-react";
 //import {Badge} from "@/components/ui/badge"
 export default function About() {
   return (
-    <section id="about" className="w-full bg-[#FFF8ED] rounded-b-3xl py-12 md:py-24 lg:py-32">
-                           <span className="bg-transparent rounded-full px-4 border text-center text-black " >About</span>
+    <section id="about" className="w-full bg-[#FFF8ED] rounded-3xl py-12 md:py-24 lg:pb-24 border-b-4 border-t-4 border-[#1E5562] flex flex-col items-center">
+      <span className="bg-transparent rounded-full px-4 mb-10 border text-center text-black " >About</span>
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col space-y-8 md:space-y-10">
           {/* Heading */}
@@ -12,8 +12,8 @@ export default function About() {
           </h2>
 
           {/* Paragraph */}
-          <p className="max-w-7xl text-muted-foreground md:text-xl">
-            Creative Abacus Academy, established in 2021 by <strong>Founder Anthony Serao</strong> and led by <strong>Headmaster Nirmala Sunitha Mendonca</strong>, is recognized as the <strong>best abacus center in Shivamogga</strong>. Our ISO-certified curriculum has empowered <strong>100+ students</strong> through structured finger abacus and vedic maths programs.
+          <p className="max-w-7xl text-muted-foreground text-[#8C8882] font-headline font-thin md:text-xl">
+            Creative Abacus Academy, established in 2021 by <span className="font-semibold">Founder Anthony Serao</span> and led by <span className="font-semibold" >Headmaster Nirmala Sunitha Mendonca</span>, is recognized as the <strong>best abacus center in Shivamogga</strong>. Our ISO-certified curriculum has empowered <strong>100+ students</strong> through structured finger abacus and vedic maths programs.
           </p>
 
           {/* Branch Heading */}
@@ -26,18 +26,18 @@ export default function About() {
           {/* Branches */}
           <div className="flex flex-col gap-6 md:flex-row md:gap-20">
             {/* Branch 1 */}
-            <div className="space-y-1 p-5 border rounded-3xl ">
+            <div className="space-y-1 p-5 border-l-4 border-2 border-[#1E5562] rounded-3xl ">
               <div className="flex items-center gap-2">
                 <MapPin className="text-accent" />
                 <h4 className="text-lg font-headline font-semibold">Gopala Branch</h4>
               </div>
-              <p className="text-muted-foreground pl-8">
+              <p className="text-muted-foreground  pl-8">
                 2nd Cross, Beside Vidhathri Bhavan, Opp. Arun Ice Cream, Shimoga
               </p>
             </div>
 
             {/* Branch 2 */}
-            <div className="space-y-1 p-5  border rounded-3xl">
+            <div className="space-y-1 p-5 border-l-4 border-2 border-[#1E5562] rounded-3xl">
               <div className="flex items-center gap-2">
                 <MapPin className="text-accent" />
                 <h4 className="text-lg font-headline font-semibold">Sominakoppa Branch</h4>

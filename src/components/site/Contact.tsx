@@ -15,8 +15,8 @@ import Link from 'next/link';
 const formSchema = z.object({
   childName: z.string().min(2, { message: "Child's name must be at least 2 characters." }),
   childAge: z.string().min(1, { message: "Please enter a valid age." }),
+  parentName: z.string().min(2, { message: "Parent's name must be at least 2 characters." }),
   parentPhone: z.string().min(10, { message: "Please enter a valid 10-digit phone number." }),
-  email: z.string().email({ message: 'Please enter a valid email address.' }),
   message: z.string().optional(),
 });
 
@@ -28,8 +28,8 @@ export default function Contact() {
     defaultValues: {
       childName: '',
       childAge: '',
+      parentName: '',
       parentPhone: '',
-      email: '',
       message: '',
     },
   });
@@ -56,25 +56,25 @@ export default function Contact() {
         </div>
         <div className="mt-12 grid grid-cols-1 gap-12 lg:grid-cols-5">
           <div className="space-y-8 lg:col-span-2">
-            <Card className="p-6 shadow-sm">
+            <Card className="p-6 rounded-3xl">
               <h3 className="text-xl font-headline font-bold mb-4">Contact Information</h3>
               <div className="space-y-4">
                 <div className="flex items-start gap-4">
-                  <Phone className="h-5 w-5 text-primary mt-1" />
+                  <Phone className="h-5 w-5 text-accent mt-1" />
                   <div>
                     <p className="font-headline font-semibold">Phone/WhatsApp</p>
                     <p className="text-sm text-muted-foreground">96634 44851</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <Mail className="h-5 w-5 text-primary mt-1" />
+                  <Mail className="h-5 w-5 text-accent mt-1" />
                   <div>
                     <p className="font-headline font-semibold">Email</p>
                     <p className="text-sm text-muted-foreground">info@creativeabacus.com</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <Clock className="h-5 w-5 text-primary mt-1" />
+                  <Clock className="h-5 w-5 text-accent mt-1" />
                   <div>
                     <p className="font-headline font-semibold">School Hours</p>
                     <p className="text-sm text-muted-foreground">Mon–Sat: 10 AM–6 PM</p>
@@ -83,30 +83,30 @@ export default function Contact() {
               </div>
             </Card>
 
-            <Card className="p-6 shadow-sm">
+            <Card className="p-6  rounded-3xl">
               <div className="flex items-start gap-4">
-                <MapPin className="h-6 w-6 text-primary mt-1" />
+                <MapPin className="h-6 w-6 text-accent mt-1" />
                 <div>
                   <p className="font-headline font-semibold">Gandhinagar Branch</p>
                   <p className="text-sm text-muted-foreground">2nd Cross, Beside Vidhathri Bhavan, Opp. Arun Ice Cream, Shimoga</p>
                 </div>
               </div>
-              <Button asChild variant="outline" className="w-full bg-primary text-primary-foreground font-headline mt-4">
+              <Button asChild variant="outline" className="w-full bg-accent rounded-full hover:underline text-primary-foreground font-headline mt-4">
                 <a href="https://maps.app.goo.gl/r6fJ9FkPZ3tJ3S9M9" target="_blank" rel="noopener noreferrer">
                   Get Directions <ExternalLink className="ml-2 h-4 w-4" />
                 </a>
               </Button>
             </Card>
 
-            <Card className="p-6 shadow-sm">
+            <Card className="p-6 rounded-3xl">
               <div className="flex items-start gap-4">
-                <MapPin className="h-6 w-6 text-primary mt-1" />
+                <MapPin className="h-6 w-6 text-accent mt-1" />
                 <div>
                   <p className="font-headline font-semibold">Devraj Aras Badavane Branch</p>
                   <p className="text-sm text-muted-foreground">Somina Koppa, Shivamogga</p>
                 </div>
               </div>
-              <Button asChild variant="outline" className="w-full bg-primary text-primary-foreground font-headline mt-4">
+              <Button asChild variant="outline" className="w-full bg-accent rounded-full hover:underline text-primary-foreground font-headline mt-4">
                 <a href="https://maps.app.goo.gl/vN38R8r5w6J5WqC76" target="_blank" rel="noopener noreferrer">
                   Get Directions <ExternalLink className="ml-2 h-4 w-4" />
                 </a>
@@ -115,11 +115,10 @@ export default function Contact() {
           </div>
 
           <div className="lg:col-span-3">
-            <Card className="p-6 shadow-lg sm:p-8">
+            <Card className="p-6 rounded-3xl sm:p-8">
               <h3 className="text-2xl font-bold mb-2">Enquiry & Admission Form</h3>
-              <p className="text-sm text-muted-foreground mb-6">Required Documents: Recent Photo, Aadhar Card, Birth Certificate</p>
-              <CardContent className="p-0">
-                <Form {...form}>
+             
+              <Form {...form}>
                   <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                     <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                       <FormField
@@ -148,6 +147,19 @@ export default function Contact() {
                           </FormItem>
                         )}
                       />
+                       <FormField
+                        control={form.control}
+                        name="parentName"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>Parent's Name *</FormLabel>
+                            <FormControl>
+                              <Input placeholder="Enter parent's full name" {...field} />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
                       <FormField
                         control={form.control}
                         name="parentPhone"
@@ -156,19 +168,6 @@ export default function Contact() {
                             <FormLabel>Parent's Phone *</FormLabel>
                             <FormControl>
                               <Input placeholder="Enter phone number" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                      <FormField
-                        control={form.control}
-                        name="email"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Email Address</FormLabel>
-                            <FormControl>
-                              <Input placeholder="Enter email address" {...field} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -192,8 +191,15 @@ export default function Contact() {
                       Submit Enquiry 
                     </Button>
                   </form>
-                </Form>
-              </CardContent>
+              </Form>
+            </Card>
+            <Card className="p-6 rounded-3xl sm:p-8 mt-8">
+              <h3 className="text-2xl  font-bold mb-2">Required Documents for Admission</h3>
+              <ul className="list-disc pl-5 space-y-2 marker:text-accent marker:marker-large text-muted-foreground">
+                <li>Recent Passport-sized Photograph of the child</li>
+                <li>Copy of the Child's Aadhar Card</li>
+                <li>Copy of the Child's Birth Certificate</li>
+              </ul>
             </Card>
           </div>
         </div>
