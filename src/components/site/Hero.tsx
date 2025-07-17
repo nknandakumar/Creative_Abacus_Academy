@@ -33,17 +33,23 @@ export default function Hero() {
             Welcome to <span className='text-accent ' >Creative Abacus Academy</span>
           </h1>
           </BlurFade>
+          <BlurFade delay={0.25} inView>
           <p className="max-w-[700px] text-muted-foreground text-[#8C8882] md:text-xl">
             Best Abacus Classes in Shivamogga: Boost focus, speed, and confidence with fun, brain-powered math training for kids
           </p>
+          </BlurFade>
+          <BlurFade delay={0.30} inView>
           <div className="w-full ">
             <Button asChild className="bg-accent text-extrabold font-headline rounded-full px-8  hover:bg-accent/90">
               <Link href="#contact" className='font-bold font-headline text-white '  >Contact</Link>
             </Button>
           </div>
+          </BlurFade>
+        
 
         </div>
-        <div className="mt-12 md:mt-16 py-8 md:py-4 flex justify-center">
+       <BlurFade delay={0.40} inView >
+       <div className="mt-12 md:mt-16 py-8 md:py-4 flex justify-center">
           <Marquee className="[--duration:10s]">
             {marqueeItems.map((item, index) => (
               <span key={index} className="mx-4 text-base font-bold text-black  whitespace-nowrap">
@@ -52,6 +58,7 @@ export default function Hero() {
             ))}
           </Marquee>
         </div>
+       </BlurFade>
         <div className="flex flex-col space-y-2 justify-center items-center mt-12 md:mt-16 ">
           <Image src={Trust} width={40} height={40} alt='Trust Symbol' />
           <p className="max-w-[700px] font-headline text-black md:text-xl">Trusted by 100+ Parents</p>
