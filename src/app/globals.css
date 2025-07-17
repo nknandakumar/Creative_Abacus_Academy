@@ -73,3 +73,35 @@
 html {
   scroll-behavior: smooth;
 }
+
+
+@keyframes marquee-horizontal {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-vertical {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee-horizontal 30s linear infinite;
+}
+
+.marquee-horizontal {
+  flex-direction: row;
+}
+
+.marquee-vertical {
+  flex-direction: column;
+  animation: marquee-vertical 30s linear infinite;
+}

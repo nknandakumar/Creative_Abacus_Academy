@@ -1,6 +1,6 @@
 "use client";
 
-import { useInView, useMotionValue, useSpring } from "motion/react";
+import { useInView, useMotionValue, useSpring } from "framer-motion";
 import { ComponentPropsWithoutRef, useEffect, useRef } from "react";
 
 import { cn } from "../../lib/utils";
@@ -61,7 +61,7 @@ export function NumberTicker({
       )}
       {...props}
     >
-      {startValue}
+      {startValue.toFixed(decimalPlaces)}
     </span>
   );
 }
