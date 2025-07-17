@@ -1,8 +1,11 @@
 import type {Metadata} from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster"
-import { Poppins, PT_Sans } from 'next/font/google';
+import { Poppins, PT_Sans, Montserrat } from 'next/font/google';
 import { cn } from '@/lib/utils';
+import Image from 'next/image';
+import Link from 'next/link';
+
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -13,9 +16,15 @@ const poppins = Poppins({
   variable: '--font-poppins',
 });
 
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800', '900'],
+  variable: '--font-montserrat',
+});
+
 const ptSans = PT_Sans({
   subsets: ['latin'],
-  weight: ['400', '700'],
+  weight: ['400', '700'], 
   variable: '--font-pt-sans',
 });
 
@@ -36,9 +45,18 @@ export default function RootLayout({
         className={cn(
           "font-body antialiased",
           poppins.variable,
-          ptSans.variable
+          ptSans.variable,
+          montserrat.variable
         )}
       >
+        <Link
+          href="https://wa.me/+919449801748"
+          className="fixed bottom-8 right-8 z-50 bg-green-500 rounded-full p-3 shadow-lg hover:scale-110 transition-transform duration-200"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image src="/whatsapp.svg" alt="WhatsApp" width={30} height={30} />
+        </Link>
         {children}
         <Toaster />
       </body>

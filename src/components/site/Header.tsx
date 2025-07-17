@@ -8,10 +8,13 @@ import { Menu, Sparkles } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const navLinks = [
+  { name: 'Home', href: '#home' },
   { name: 'About', href: '#about' },
+  { name: 'Why Us', href: '#why-choose-us' },
   { name: 'Courses', href: '#courses' },
   { name: 'Benefits', href: '#benefits' },
   { name: 'Gallery', href: '#gallery' },
+  { name: 'Feedback', href: '#testimonials' },
   { name: 'FAQ', href: '#faq' },
 ];
 

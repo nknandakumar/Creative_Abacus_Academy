@@ -43,7 +43,7 @@ const programHighlights = [
 ];
 
 export default function Courses() {
- const sectionRef = useRef<HTMLDivElement | null>(null);  
+  const sectionRef = useRef<HTMLDivElement | null>(null);
   const scrollRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -79,7 +79,7 @@ export default function Courses() {
   return (
     <section id="courses" className="w-full bg-[#FFF8ED] py-20">
       {/* Fixed Heading */}
-      <div className="container mx-auto px-4 md:px-6 mb-12 text-center">
+      <div className="container mx-auto px-4 md:px-6 mb-10 text-center">
         <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
           Our Courses with Other Programs
         </h2>
@@ -112,11 +112,10 @@ export default function Courses() {
                   </h3>
                 </div>
                 <p
-                  className={`text-base md:text-lg ${
-                    item.title[0] === "J"
+                  className={`text-base md:text-lg ${item.title[0] === "J"
                       ? "text-white"
                       : "text-gray-800/80"
-                  } dark:text-white/90 mt-4`}
+                    } dark:text-white/90 mt-4`}
                 >
                   {item.desc}
                 </p>
