@@ -27,6 +27,14 @@ export function Marquee({
         className
       )}
     >
+      {/* Fade effect (Left and Right) */}
+      {!vertical && (
+        <>
+          <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-10 bg-gradient-to-r from-white/90 to-transparent" />
+          <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-10 bg-gradient-to-l from-white/90 to-transparent" />
+        </>
+      )}
+
       <div
         className={cn(
           "flex shrink-0 gap-6 animate-marquee",
@@ -34,7 +42,6 @@ export function Marquee({
           `[animation-direction:${direction}]`
         )}
       >
-        {/* Duplicate content for seamless loop */}
         <div className="flex gap-6">{children}</div>
         <div className="flex gap-6" aria-hidden="true">
           {children}
