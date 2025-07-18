@@ -23,7 +23,15 @@ export function NumberTickerDemo() {
 }
 
 export default function WhyChooseUs() {
-	const avatarSrc = "https://pagedone.io/asset/uploads/1704275541.png";
+
+  const photos = [
+    "https://images.unsplash.com/photo-1680525021501-ddea41969892?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "https://images.unsplash.com/photo-1603485164003-33704e0244b8?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "https://images.unsplash.com/photo-1669555350922-deefa8f666ea?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "https://images.unsplash.com/photo-1669555353684-89a9ecf230aa?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "https://images.unsplash.com/photo-1669946964044-f16f98ae4980?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+
+  ]
 
 	return (
 		<section
@@ -81,13 +89,13 @@ export default function WhyChooseUs() {
 						>
 							<div className="flex flex-row  gap-2 justify-start items-center ">
 								<div className="flex  -space-x-4">
-									{[...Array(5)].map((_, i) => (
+									{photos.map((_, i) => (
 										<div
 											key={i}
 											className="w-10 h-10 border-2 border-white rounded-full overflow-hidden"
 										>
 											<Image
-												src={avatarSrc}
+												src={photos[i]}
 												alt="Stacked rounded avatar"
 												width={50}
 												height={50}

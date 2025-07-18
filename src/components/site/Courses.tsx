@@ -4,12 +4,11 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { BlurFade } from "@/components/magicui/blur-fade";
-
 gsap.registerPlugin(ScrollTrigger);
 
 const programHighlights = [
 	{
-		title: "Abacus Levels 0–8",
+		title: "Abacus 0-8 Levels ",
 		desc: "Step-by-step finger abacus training & mental visualization",
 		color: "bg-[#BDEE3B]",
 	},
@@ -80,7 +79,7 @@ export default function Courses() {
 			<div className="container mx-auto px-4 md:px-6 mb-10 text-center">
 				<BlurFade delay={0.1} inView>
 					<h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-						Our Courses with Other Programs
+						Our Courses
 					</h2>
 				</BlurFade>
 				<BlurFade delay={0.2} inView>
@@ -102,7 +101,6 @@ export default function Courses() {
 						ref={scrollRef}
 					>
 						{programHighlights.map((item, index) => (
-							// key={index}
 							<BlurFade key={index} delay={0.25 + index * 0.05} inView>
 								<div
 									className={`shrink-0 w-[80vw]  md:w-[30vw] h-[350px] p-6 rounded-3xl ${item.color} flex flex-col gap-3`}

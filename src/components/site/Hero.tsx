@@ -32,7 +32,7 @@ export default function Hero() {
 	return (
 		<section
 			id="home"
-			className="w-full mt-10 py-12 pt-14 bg-[#FFF8ED] md:py-24 lg:py-32"
+			className="w-full mt-10 md:mt-4 py-12 pt-14 bg-[#FFF8ED] md:py-24 lg:py-32"
 		>
 			<div className="container px-4 md:px-6">
 				<div className="flex flex-col items-center space-y-6 text-center">
@@ -81,9 +81,9 @@ export default function Hero() {
 					</div>
 				</BlurFade>
 
-				<div className="flex flex-col space-y-2 justify-center items-center mt-12 md:mt-16">
+				<div className="flex flex-col space-y-2 justify-center items-center mt-12 md:mt-14">
 					<BlurFade delay={0.45} inView>
-						<Image src={Trust} width={40} height={40} alt="Trust Symbol" />{" "}
+						<Image src={Trust} width={40} height={40} alt="Trust Symbol" className=" rounded-full"/>{" "}
 					</BlurFade>
 					<BlurFade delay={0.55} inView>
 						<p className="max-w-[700px] font-headline text-black md:text-xl">

@@ -139,19 +139,19 @@ export default function Carousel() {
     {
       text: "My daughter's math speed and confidence skyrocketed after joining Creative Abacus Academy. The trainers are incredibly patient and skilled.",
       author: "Priya Sharma",
-      location: "Gandhinagar Branch",
+      location: "Gopala Branch",
       rating: 5,
     },
     {
       text: "The instructors are amazing, and the results are visible within just a few weeks. Best investment for my child's future!",
       author: "Raj Kumar",
-      location: "Devraj Aras Badavane",
+      location: "Sominkoppa Badavane",
       rating: 5,
     },
     {
       text: "ISO certification and experienced teachers make this the best abacus center in Shivamogga. Highly recommended!",
       author: "Meera Nair",
-      location: "Gandhinagar Branch",
+      location: "Gopala Branch",
       rating: 5,
     },
   ];

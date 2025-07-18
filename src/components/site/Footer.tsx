@@ -9,8 +9,9 @@ export default function Footer() {
         {/* Left Column: Brand & Navigation */}
         <div className="flex flex-col gap-6">
           <Link href="/" className="flex items-center gap-2">
-            <Sparkles className="h-7 w-7 text-primary" />
-            <span className="font-headline text-xl font-bold text-gray-100">AbacusAce</span>
+          {/**<Image src="https://res.cloudinary.com/dk1zdm8gz/image/upload/v1752830737/CAC_logo-removebg-preview_loij72.webp" alt="Creative Abacus Academy Logo" width={42} height={42} className='' /> */}
+            <span className="font-headline text-xl font-bold text-gray-100">Creative Abacus Academy
+            </span>
           </Link>
           <p className="max-w-md text-sm text-gray-300">
             Empowering young minds through Abacus, Vedic Maths, and cognitive development programs. With certified training, structured levels, and a passion for excellence, we help children unlock their full mental potential.

@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Menu, Sparkles } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import Image from 'next/image';
 
 const navLinks = [
   { name: 'Home', href: '#home' },
@@ -48,7 +49,7 @@ export default function Header() {
       >
         <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
           <Link href="/" className="flex items-center gap-2">
-            <Sparkles className="h-7 w-7 text-primary" />
+            <Image src="https://res.cloudinary.com/dk1zdm8gz/image/upload/v1752830737/CAC_logo-removebg-preview_loij72.webp" alt="Creative Abacus Academy Logo" width={42} height={42} className='w-full h-full' />
             <span className="font-headline text-accent text-2xl font-bold">AbacusAce</span>
           </Link>
           <nav className="flex items-center gap-6">
@@ -91,8 +92,8 @@ export default function Header() {
           <SheetContent  className='bg-[#FFF8ED]' side="right">
             <div className="flex flex-col bg-[#FFF8ED] gap-6 p-6">
               <Link href="/" className="flex items-center  gap-2" onClick={closeSheet}>
-                <Sparkles className="h-6 w-6 text-primary" />
-                <span className="font-headline text-xl font-bold">AbacusAce</span>
+              <Image src="https://res.cloudinary.com/dk1zdm8gz/image/upload/v1752830737/CAC_logo-removebg-preview_loij72.webp" alt="Creative Abacus Academy Logo" width={42} height={42} className='w-full h-full' />
+                <span className="font-headline text-xl font-bold">Creative Abacus Academy</span>
               </Link>
               <nav className="flex flex-col gap-4">
                 {navLinks.map((link) => (

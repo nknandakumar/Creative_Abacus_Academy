@@ -20,7 +20,7 @@ const benefits = [
 		description:
 			"Develops lightning-fast calculation abilities without calculator dependency.",
 		image:
-			"https://images.unsplash.com/photo-1711409645921-ef3db0501f96?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0",
+			"https://res.cloudinary.com/dk1zdm8gz/image/upload/v1752859276/ai-6767497_1280_zg62xj.jpg",
 	},
 	{
 		title: "Builds Confidence & Self-Discipline",
@@ -147,12 +147,12 @@ export default function AnimatedBenefits() {
 							className={`benefit-${i} flex items-center justify-center min-h-screen px-6 md:px-20`}
 						>
 							<div className="max-w-2xl text-center space-y-6">
-								<BlurFade delay={0.1} inView>
+								<BlurFade delay={0.2} inView>
 									<h2 className="text-3xl font-headline md:text-6xl font-bold">
 										{benefit.title}
 									</h2>
 								</BlurFade>
-								<BlurFade delay={0.2} inView>
+								<BlurFade delay={0.3} inView>
 									<p className="text-lg md:text-2xl font-headline text-white/80">
 										{benefit.description}
 									</p>

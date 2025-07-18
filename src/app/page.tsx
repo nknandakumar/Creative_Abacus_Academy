@@ -24,7 +24,6 @@ export default function Home() {
         <Gallery />
         <Testimonials />
         <Faq />
-    
         <Contact />
       </main>
       <Footer />
