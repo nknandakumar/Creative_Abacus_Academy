@@ -6,19 +6,16 @@ import { Marquee } from "@/components/magicui/marquee";
 import Trust from "../../../public/trust.svg";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import { cn } from "@/lib/utils";
+import { AnimatedShinyText } from "@/components/magicui/animated-shiny-text";
+import ShinyText from "../ui/ShinyText";
 
 const marqueeItems = [
-	{ label: "ISO Certified Program", icon: CheckCircle },
-	{ label: "Abacus Levels 0–8", icon: Zap },
-	{ label: "Vedic Math Training", icon: Star },
-	{ label: "Competitive Exam Preparation", icon: CheckCircle },
-	{ label: "Enhanced Memory & Concentration", icon: Zap },
-	{ label: "Brain Development Techniques", icon: Star },
-	{ label: "Certified Expert Trainers", icon: CheckCircle },
-	{ label: "Fun & Engaging Curriculum", icon: Star },
-	{ label: "Speed & Accuracy Enhancement", icon: Zap },
-	{ label: "National & State-Level Competition Coaching", icon: CheckCircle },
-];
+	{ label: "Abacus 0-8 Levels", icon: CheckCircle },
+	{ label: "Vedic Maths", icon: Star },
+	{ label: "Jolly Phonics", icon: Zap },
+	{ label: "Handwriting Classes", icon: CheckCircle },
+	{ label: "Language Basics", icon: Star },
+]
 
 const profilePic = [
 	"https://images.unsplash.com/photo-1698268297105-02f0ec7a438b?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0",
@@ -48,19 +45,30 @@ export default function Hero() {
 							confidence with fun, brain-powered math training for kids
 						</p>
 					</BlurFade>
-					<BlurFade delay={0.3} inView>
-						<div className="w-full">
-							<Button
-								asChild
-								className="bg-accent text-extrabold font-headline rounded-full px-8 hover:bg-accent/90"
-							>
-								<Link
-									href="#contact"
-									className="font-bold font-headline text-white"
-								>
-									Contact
-								</Link>
-							</Button>
+					<BlurFade>
+						<div className="border mt-2 rounded-full py-4 px-6 flex flex-col gap-6  ">
+							<BlurFade className="-mt-7 font-headline bg-[#FFF8ED]">
+								<p className=" ">
+									{" "}
+									Available both{" "}
+									<span className="text-accent"> Online & Offline</span>
+								</p>
+							</BlurFade>
+							<BlurFade delay={0.3} className="-mb-8" inView>
+								<div className="w-full">
+									<Button
+										asChild
+										className="bg-accent text-extrabold font-headline rounded-full px-8 hover:bg-accent/90"
+									>
+										<Link
+											href="#contact"
+											className="font-bold font-headline text-white"
+										>
+											Contact
+										</Link>
+									</Button>
+								</div>
+							</BlurFade>
 						</div>
 					</BlurFade>
 				</div>
@@ -83,14 +91,20 @@ export default function Hero() {
 
 				<div className="flex flex-col space-y-2 justify-center items-center mt-12 md:mt-14">
 					<BlurFade delay={0.45} inView>
-						<Image src={Trust} width={40} height={40} alt="Trust Symbol" className=" rounded-full"/>{" "}
+						<Image
+							src={Trust}
+							width={40}
+							height={40}
+							alt="Trust Symbol"
+							className=" rounded-full"
+						/>{" "}
 					</BlurFade>
 					<BlurFade delay={0.55} inView>
 						<p className="max-w-[700px] font-headline text-black md:text-xl">
 							Trusted by 100+ Parents
 						</p>
 					</BlurFade>
-					<BlurFade delay={0.65} inView>
+					<BlurFade delay={0.65}>
 						<div className="flex -space-x-4">
 							{profilePic.map((src, i) => (
 								<div
