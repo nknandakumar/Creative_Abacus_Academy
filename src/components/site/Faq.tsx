@@ -10,17 +10,17 @@ const faqItems = [
 	{
 		question: "What age groups do you serve?",
 		answer:
-			"We cater to children aged 5–14, grouping them into appropriate levels for focused learning.",
+			"We cater to children aged 3.5–above, grouping them into appropriate levels for focused learning.",
 	},
 	{
 		question: "How long does each abacus level take?",
 		answer:
-			"Each level typically spans 4–6 weeks, based on individual progress.",
+			"Each level typically spans 8-12 weeks, based on individual progress.",
 	},
 	{
 		question: "Are classes in-person only?",
 		answer:
-			"Yes, we currently offer in-person classes at both Shivamogga branches to provide hands-on guidance.",
+			" Available both Online and Offline .",
 	},
 	{
 		question: "Can parents sit in on classes?",
