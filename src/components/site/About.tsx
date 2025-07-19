@@ -7,11 +7,12 @@ export default function About() {
 			id="about"
 			className="w-full bg-[#FFF8ED] rounded-3xl py-12 md:py-24 lg:pb-24 border-b-4 border-t-4 border-[#1E5562] flex flex-col items-center"
 		>
-			
-				<span className="bg-transparent rounded-full px-4 mb-10 border text-center text-black ">
-					<BlurFade delay={0.1} inView>About</BlurFade>
-				</span>
-	
+			<span className="bg-transparent rounded-full px-4 mb-10 border text-center text-black ">
+				<BlurFade delay={0.1} inView>
+					About
+				</BlurFade>
+			</span>
+
 			<div className="container mx-auto px-4 md:px-6">
 				<div className="flex flex-col space-y-8 md:space-y-10">
 					{/* Heading */}
@@ -55,7 +56,7 @@ export default function About() {
 								<div className="flex items-center gap-2">
 									<MapPin className="text-accent" />
 									<h4 className="text-lg font-headline font-semibold">
-										Gopala Branch
+										Gandhinagar Branch
 									</h4>
 								</div>
 								<p className="text-muted-foreground  pl-8">

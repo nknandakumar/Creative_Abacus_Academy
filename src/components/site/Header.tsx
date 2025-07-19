@@ -65,6 +65,7 @@ export default function Header() {
           </nav>
           <div className="flex gap-4">
             <Button asChild className="bg-accent rounded-full px-4 font-headline text-accent-foreground hover:bg-accent/90">
+
               <Link href="#contact">Call</Link>
             </Button>
             <Button asChild className="bg-accent rounded-full font-headline text-accent-foreground hover:bg-accent/90">
