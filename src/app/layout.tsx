@@ -7,7 +7,7 @@ import { Poppins, PT_Sans, Montserrat } from "next/font/google";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
-
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -130,6 +130,7 @@ export default function RootLayout({
 					<Image src="/whatsapp.svg" alt="WhatsApp" width={30} height={30} />
 				</Link>
 				{children}
+				<SpeedInsights />
 				<Toaster />
 			</body>
 		</html>

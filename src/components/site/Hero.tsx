@@ -99,12 +99,12 @@ export default function Hero() {
 							className=" rounded-full"
 						/>{" "}
 					</BlurFade>
-					<BlurFade delay={0.55} inView>
+					<BlurFade delay={0.50} inView>
 						<p className="max-w-[700px] font-headline text-black md:text-xl">
 							Trusted by 100+ Parents
 						</p>
 					</BlurFade>
-					<BlurFade delay={0.65}>
+					<BlurFade delay={0.55}>
 						<div className="flex -space-x-4">
 							{profilePic.map((src, i) => (
 								<div
