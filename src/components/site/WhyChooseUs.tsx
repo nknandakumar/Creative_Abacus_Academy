@@ -50,9 +50,9 @@ export default function WhyChooseUs() {
 						<p className="mt-4 text-muted-foreground md:text-xl">
 							Discover what makes us the{" "}
 							<span className=" font-bold">
-								best abacus center in Shivamogga
+								best abacus center in Shivamogga .
 							</span>{" "}
-							with ISO certification and proven track record.
+						
 						</p>
 					</BlurFade>
 				</div>

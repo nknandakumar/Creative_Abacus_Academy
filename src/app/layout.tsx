@@ -1,3 +1,5 @@
+"use client";
+
 import type { Metadata } from "next";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
@@ -9,6 +11,7 @@ import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
+
 const poppins = Poppins({
 	subsets: ["latin"],
 	weight: ["400", "500", "600", "700", "900"],
@@ -26,12 +29,6 @@ const ptSans = PT_Sans({
 	weight: ["400", "700"],
 	variable: "--font-pt-sans",
 });
-
-export const metadata: Metadata = {
-	title: "Best Abacus Classes in Shivamogga | Creative Abacus Academy",
-	description:
-		"ISO-Certified Abacus & Vedic Maths Training in Shivamogga for kids. We offer Levels 0–8, championship prep, and have trained over 100 students. Book a free trial!",
-};
 
 export default function RootLayout({
 	children,

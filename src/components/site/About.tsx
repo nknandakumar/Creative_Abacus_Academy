@@ -35,7 +35,7 @@ export default function About() {
 							<strong>best abacus center in Shivamogga</strong>. Our
 							ISO-certified curriculum has empowered{" "}
 							<strong>100+ students</strong> through structured finger abacus
-							and vedic maths programs.
+							and vedic maths programs and more.
 						</p>
 					</BlurFade>
 
