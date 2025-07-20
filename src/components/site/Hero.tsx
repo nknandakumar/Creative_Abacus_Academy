@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Star, CheckCircle, Zap } from "lucide-react";
+import { Star, CheckCircle, Zap, Languages, Sigma,Signature,BookType  } from "lucide-react";
 import { Marquee } from "@/components/magicui/marquee";
 import Trust from "../../../public/trust.svg";
 import { BlurFade } from "@/components/magicui/blur-fade";
@@ -11,10 +11,10 @@ import ShinyText from "../ui/ShinyText";
 
 const marqueeItems = [
 	{ label: "Abacus 0-8 Levels", icon: CheckCircle },
-	{ label: "Vedic Maths", icon: Star },
-	{ label: "Jolly Phonics", icon: Zap },
-	{ label: "Handwriting Classes", icon: CheckCircle },
-	{ label: "Language Basics", icon: Star },
+	{ label: "Vedic Maths", icon: Sigma },
+	{ label: "Jolly Phonics", icon: BookType },
+	{ label: "Handwriting Classes", icon: Signature },
+	{ label: "Language Basics", icon: Languages },
 ]
 
 const profilePic = [
@@ -79,7 +79,7 @@ export default function Hero() {
 							{marqueeItems.map(({ label, icon: Icon }, index) => (
 								<span
 									key={index}
-									className="flex items-center gap-2 mx-6 border border-accent rounded-full px-4 py-2 uppercase text-black md:text-xl font-headline text-center whitespace-nowrap"
+									className="flex items-center gap-2 mx-6 border-r-2 border-l-2  border border-accent rounded-full px-4 py-2  italic text-black md:text-xl font-headline text-center whitespace-nowrap"
 								>
 									<Icon size={18} className="text-accent" />
 									{label}
