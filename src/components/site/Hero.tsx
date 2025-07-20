@@ -89,7 +89,7 @@ export default function Hero() {
 					</div>
 				</BlurFade>
 
-				<div className="flex flex-col space-y-2 justify-center items-center mt-12 md:mt-14">
+				<div className="flex flex-col space-y-2 justify-center items-center mt-6 md:mt-14">
 					<BlurFade delay={0.45} inView>
 						<Image
 							src={Trust}
