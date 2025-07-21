@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Star, CheckCircle, Zap, Languages, Sigma,Signature,BookType  } from "lucide-react";
-import { Marquee } from "@/components/magicui/marquee";
+import { Marquee } from "@/components/magicui/marquee1";
 import Trust from "../../../public/trust.svg";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import { cn } from "@/lib/utils";

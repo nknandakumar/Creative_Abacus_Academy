@@ -2,51 +2,73 @@ import { cn } from "../../lib/utils";
 import { ComponentPropsWithoutRef } from "react";
 
 interface MarqueeProps extends ComponentPropsWithoutRef<"div"> {
-  className?: string;
-  reverse?: boolean;
-  vertical?: boolean;
-  children: React.ReactNode;
+	/**
+	 * Optional CSS class name to apply custom styles
+	 */
+	className?: string;
+	/**
+	 * Whether to reverse the animation direction
+	 * @default false
+	 */
+	reverse?: boolean;
+	/**
+	 * Whether to pause the animation on hover
+	 * @default false
+	 */
+	pauseOnHover?: boolean;
+	/**
+	 * Content to be displayed in the marquee
+	 */
+	children: React.ReactNode;
+	/**
+	 * Whether to animate vertically instead of horizontally
+	 * @default false
+	 */
+	vertical?: boolean;
+	/**
+	 * Number of times to repeat the content
+	 * @default 4
+	 */
+	repeat?: number;
 }
 
 export function Marquee({
-  className,
-  reverse = false,
-  vertical = false,
-  children,
-  ...props
+	className,
+	reverse = false,
+	pauseOnHover = false,
+	children,
+	vertical = false,
+	repeat = 4,
+	...props
 }: MarqueeProps) {
-  const direction = reverse ? "reverse" : "normal";
-  const isVertical = vertical ? "marquee-vertical" : "marquee-horizontal";
-
-  return (
-    <div
-      {...props}
-      className={cn(
-        "relative overflow-hidden w-full h-fit",
-        vertical ? "flex-col" : "flex",
-        className
-      )}
-    >
-      {/* Fade effect (Left and Right) */}
-      {!vertical && (
-        <>
-          <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-10 bg-gradient-to-r from-white/90 to-transparent" />
-          <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-10 bg-gradient-to-l from-white/90 to-transparent" />
-        </>
-      )}
-
-      <div
-        className={cn(
-          "flex shrink-0 gap-6 animate-marquee",
-          isVertical,
-          `[animation-direction:${direction}]`
-        )}
-      >
-        <div className="flex gap-6">{children}</div>
-        <div className="flex gap-6" aria-hidden="true">
-          {children}
-        </div>
-      </div>
-    </div>
-  );
+	return (
+		<div
+			{...props}
+			className={cn(
+				"group flex overflow-hidden p-2 [--duration:40s] [--gap:1rem] [gap:var(--gap)]",
+				{
+					"flex-row": !vertical,
+					"flex-col": vertical,
+				},
+				className
+			)}
+		>
+			{Array(repeat)
+				.fill(0)
+				.map((_, i) => (
+					<div
+						key={i}
+						className={cn("flex shrink-0 justify-around [gap:var(--gap)]", {
+							"animate-marquee flex-row": !vertical && !reverse,
+							"animate-marquee-reverse flex-row": !vertical && reverse,
+							"animate-marquee-vertical flex-col": vertical && !reverse,
+							// If you want vertical reverse, add a vertical reverse animation here
+							"group-hover:[animation-play-state:paused]": pauseOnHover,
+						})}
+					>
+						{children}
+					</div>
+				))}
+		</div>
+	);
 }
