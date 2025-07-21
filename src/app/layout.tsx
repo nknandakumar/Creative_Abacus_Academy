@@ -46,27 +46,27 @@ export default function RootLayout({
 				<meta name="robots" content="index, follow" />
 				<meta
 					name="description"
-					content="A professional learning center offering Abacus and other structured programs for holistic child development."
+					content="Creative Abacus Academy is a trusted learning center dedicated to building strong foundations in math through expert-led Abacus training for children."
 				/>
 				<meta property="og:title" content="Creative Abacus Academy" />
 				<meta
 					property="og:description"
-					content="A professional learning center offering Abacus and other structured programs for holistic child development."
+					content="Creative Abacus Academy is a trusted learning center dedicated to building strong foundations in math through expert-led Abacus training for children."
 				/>
 				<meta
 					property="og:url"
 					content="https://www.creativeabacusacademy.com"
 				/>
-				<meta property="og:image" content="/logo.webp" />
+				<meta property="og:image" content="https://res.cloudinary.com/dyi29kdzv/image/upload/v1753118968/CAC_logo_oc7ywb.jpg" />
 				<meta property="og:site_name" content="Creative Abacus Academy" />
 				<meta property="og:type" content="website" />
 				<meta name="twitter:card" content="summary_large_image" />
 				<meta name="twitter:title" content="Creative Abacus Academy" />
 				<meta
 					name="twitter:description"
-					content="A professional learning center offering Abacus and other structured programs for holistic child development."
+					content="Creative Abacus Academy is a trusted learning center dedicated to building strong foundations in math through expert-led Abacus training for children."
 				/>
-				<meta name="twitter:image" content="/logo.webp" />
+				<meta name="twitter:image" content="https://res.cloudinary.com/dyi29kdzv/image/upload/v1753118968/CAC_logo_oc7ywb.jpg" />
 				<meta name="twitter:site" content="@creativeabacusacademy" />
 				<link
 					rel="preload"
@@ -79,7 +79,7 @@ export default function RootLayout({
 						"@type": "Organization",
 						name: "Creative Abacus Academy",
 						url: "https://www.creativeabacusacademy.com",
-						logo: "https://www.creativeabacusacademy.com/logo.webp",
+						logo: "https://res.cloudinary.com/dyi29kdzv/image/upload/v1753118968/CAC_logo_oc7ywb.jpg",
 						contactPoint: [
 							{
 								"@type": "ContactPoint",
