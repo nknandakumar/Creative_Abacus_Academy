@@ -1,7 +1,11 @@
+"use client";
 import { MapPin } from "lucide-react";
 import { BlurFade } from "@/components/magicui/blur-fade";
 //import {Badge} from "@/components/ui/badge"
+import React, { useState } from "react";
+import Image from "next/image";
 export default function About() {
+	const [openModal, setOpenModal] = useState(false);
 	return (
 		<section
 			id="about"
@@ -35,7 +39,17 @@ export default function About() {
 							<strong>best abacus center in Shivamogga</strong>. Our
 							ISO-certified curriculum has empowered{" "}
 							<strong>100+ students</strong> through structured finger abacus
-							and vedic maths programs and more.
+							and vedic maths programs and more.{" "}
+							<a
+								href="#"
+								onClick={(e) => {
+									e.preventDefault();
+									setOpenModal(true);
+								}}
+								className="text-accent text-sm underline font-semibold cursor-pointer hover:text-[#1E5562] transition-colors"
+							>
+								Click here for more
+							</a>
 						</p>
 					</BlurFade>
 
@@ -83,6 +97,76 @@ export default function About() {
 					</div>
 				</div>
 			</div>
+
+			{/* Modal for more about */}
+			{openModal && (
+				<div
+					className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 w-full h-full"
+					onClick={(e) => {
+						if (e.target === e.currentTarget) setOpenModal(false);
+					}}
+				>
+					<div className="relative bg-[#FFF8ED] rounded-3xl border-4 border-[#1E5562] w-[90vw] max-w-3xl h-[90vh] max-h-[90vh] overflow-y-auto p-8 font-headline text-[#1E5562] shadow-xl flex flex-col items-center">
+						<button
+							onClick={() => setOpenModal(false)}
+							className="absolute top-4 right-4 text-2xl font-bold text-[#1E5562] hover:text-accent focus:outline-none"
+							aria-label="Close"
+						>
+							&#10005;
+						</button>
+						<div className="space-y-6 w-full mt-4">
+							<p className="text-lg font-semibold text-center">
+								Empowering Young Minds with Skill, Focus & Confidence
+							</p>
+							<div className="flex flex-col md:flex-row items-start gap-8 justify-start">
+								<div className="flex flex-col items-center w-full md:w-1/2">
+									<h3 className="font-bold text-xl flex items-center gap-2 mb-2">
+										Our Founder
+									</h3>
+									<Image
+										src="https://res.cloudinary.com/dyi29kdzv/image/upload/v1753105825/WhatsApp_Image_2025-07-19_at_20.46.11_164f889e_iju0i5.jpg"
+										alt="Founder Anthony Serao"
+										width={128}
+										height={128}
+										className=" h-[200] rounded-3xl object-cover border-2 border-[#1E5562] mb-2"
+									/>
+									<span className="font-bold text-center ">Anthony Serao </span>
+									<p className="mb-2 text-center">
+										<br />A passionate educator who laid the foundation of
+										Creative Abacus Academy with a mission to develop children's
+										mental math abilities, discipline, and concentration.
+									</p>
+								</div>
+								<div className="flex flex-col items-center w-full md:w-1/2">
+									<h3 className="font-bold text-xl flex items-center gap-2 mb-2 text-center md:text-left w-full">
+										Chairperson & Headmaster
+									</h3>
+									<Image
+										src="https://res.cloudinary.com/dyi29kdzv/image/upload/v1753109556/WhatsApp_Image_2025-07-21_at_08.19.04_540181ba_mpdxuk.jpg"
+										alt="Chairperson Nirmala Sunitha Mendonca"
+										width={128}
+										height={128}
+										className="rounded-3xl h-[200] object-cover border-2 border-[#1E5562] mb-2"
+									/>
+									<span className="font-bold">Nirmala Sunitha Mendonca</span>
+									<p className="mb-2 text-center">
+										<br />
+										She leads with empathy, structure, and vision—ensuring
+										quality education and personal care for every child.
+									</p>
+								</div>
+							</div>
+							<p className="text-base mt-4 border-t pt-4 text-center">
+								At Creative Abacus Academy, we believe in more than just
+								numbers.
+								<br />
+								We focus on nurturing confidence, creativity, and lifelong
+								learning.
+							</p>
+						</div>
+					</div>
+				</div>
+			)}
 		</section>
 	);
 }
