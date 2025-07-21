@@ -137,24 +137,37 @@ const CarouselControl = ({
 export default function Carousel() {
   const slides: SlideData[] = [
     {
-      text: "My daughter's math speed and confidence skyrocketed after joining Creative Abacus Academy. The trainers are incredibly patient and skilled.",
+      text: "The teaching approach at Creative Abacus Academy is structured and easy to follow. My child is learning quickly without stress.",
       author: "Priya Sharma",
-      location: "Gopala Branch",
+      location: "Gandhinagar Branch",
       rating: 5,
     },
     {
-      text: "The instructors are amazing, and the results are visible within just a few weeks. Best investment for my child's future!",
+      text: "Classes are well-organized, and the teachers maintain discipline while keeping it engaging for the kids.",
       author: "Raj Kumar",
-      location: "Sominkoppa Badavane",
+      location: "Sominkoppa Branch",
       rating: 5,
     },
     {
-      text: "ISO certification and experienced teachers make this the best abacus center in Shivamogga. Highly recommended!",
+      text: "Very impressed with the way lessons are explained. The pace is just right, and kids are attentive throughout.",
       author: "Meera Nair",
-      location: "Gopala Branch",
+      location: "Gandhinagar Branch",
       rating: 5,
     },
+    {
+      text: "My son enjoys going to class. The teachers are dedicated and focus on each student properly.",
+      author: "Anita Desai",
+      location: "Gandhinagar Branch",
+      rating: 5,
+    },
+    {
+      text: "The school maintains a good schedule and covers every topic in detail. We’re happy with the teaching standards.",
+      author: "Ravi Joshi",
+      location: "Sominkoppa Branch",
+      rating: 5,
+    }
   ];
+  
 
   const [current, setCurrent] = useState(0);
   const id = useId();
