@@ -138,13 +138,13 @@ export default function Gallery() {
 				<div className="flex flex-col gap-8 mt-12">
 					{/* First row: left */}
 					<div className="relative w-full">
-						<div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white via-white/90 to-transparent z-10" />
-						<div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white via-white/90 to-transparent z-10" />
+						<div className="pointer-events-none absolute inset-y-0 left-0 w-8 md:w-24 bg-gradient-to-r from-white via-white/90 to-transparent z-10" />
+						<div className="pointer-events-none absolute inset-y-0 right-0 w-8 md:w-24 bg-gradient-to-l from-white via-white/90 to-transparent z-10" />
 						<Marquee pauseOnHover className="[--duration:40s]">
 							{row1.map((media, index) => (
 								<div
 									key={index}
-									className="group/card relative overflow-hidden rounded-2xl transition-all duration-300 cursor-pointer w-[280px] h-[220px] md:w-[340px] md:h-[260px] lg:w-[440px] lg:h-[300px] flex-shrink-0 mx-2"
+									className="group/card relative overflow-hidden rounded-2xl transition-all duration-300 cursor-pointer w-[240px] h-[200px] md:w-[340px] md:h-[260px] lg:w-[440px] lg:h-[300px] flex-shrink-0 mx-2"
 									onClick={() => setOpenMedia(media)}
 									tabIndex={0}
 									role="button"
@@ -166,7 +166,7 @@ export default function Gallery() {
 											poster={media.poster}
 											controls
 											preload="none"
-											className="w-full h-full object-cover rounded-2xl transition-transform duration-500 group-hover/card:scale-110 bg-black"
+											className="w-full h-full object-cover rounded-2xl transition-transform duration-500 group-hover/card:scale-110 bg-black pointer-events-none"
 											style={{ maxHeight: 300 }}
 											aria-label={media.alt}
 											tabIndex={-1}
@@ -181,13 +181,13 @@ export default function Gallery() {
 
 					{/* Second row: right (reverse) */}
 					<div className="relative w-full">
-						<div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white via-white/90 to-transparent z-10" />
-						<div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white via-white/90 to-transparent z-10" />
+						<div className="pointer-events-none absolute inset-y-0 left-0 w-8 md:w-24 bg-gradient-to-r from-white via-white/90 to-transparent z-10" />
+						<div className="pointer-events-none absolute inset-y-0 right-0 w-8 md:w-24 bg-gradient-to-l from-white via-white/90 to-transparent z-10" />
 						<Marquee reverse pauseOnHover className="[--duration:20s]">
 							{row2.map((media, index) => (
 								<div
 									key={index}
-									className="group/card relative overflow-hidden rounded-2xl transition-all duration-300 cursor-pointer w-[280px] h-[220px] md:w-[340px] md:h-[260px] lg:w-[440px] lg:h-[300px] flex-shrink-0 mx-2"
+									className="group/card relative overflow-hidden rounded-2xl transition-all duration-300 cursor-pointer w-[240px] h-[200px] md:w-[340px] md:h-[260px] lg:w-[440px] lg:h-[300px] flex-shrink-0 mx-2"
 									onClick={() => setOpenMedia(media)}
 									tabIndex={0}
 									role="button"
@@ -209,7 +209,7 @@ export default function Gallery() {
 											poster={media.poster}
 											controls
 											preload="none"
-											className="w-full h-full object-cover rounded-2xl transition-transform duration-500 group-hover/card:scale-110 bg-black"
+											className="w-full h-full object-cover rounded-2xl transition-transform duration-500 group-hover/card:scale-110 bg-black pointer-events-none"
 											style={{ maxHeight: 300 }}
 											aria-label={media.alt}
 											tabIndex={-1}
@@ -224,13 +224,13 @@ export default function Gallery() {
 
 					{/* Third row: left */}
 					<div className="relative w-full">
-						<div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white via-white/90 to-transparent z-10" />
-						<div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white via-white/90 to-transparent z-10" />
+						<div className="pointer-events-none absolute inset-y-0 left-0 w-8 md:w-24 bg-gradient-to-r from-white via-white/90 to-transparent z-10" />
+						<div className="pointer-events-none absolute inset-y-0 right-0 w-8 md:w-24 bg-gradient-to-l from-white via-white/90 to-transparent z-10" />
 						<Marquee pauseOnHover className="[--duration:40s]">
 							{row3.map((media, index) => (
 								<div
 									key={index}
-									className="group/card relative overflow-hidden rounded-2xl transition-all duration-300 cursor-pointer w-[280px] h-[220px] md:w-[340px] md:h-[260px] lg:w-[440px] lg:h-[300px] flex-shrink-0 mx-2"
+									className="group/card relative overflow-hidden rounded-2xl transition-all duration-300 cursor-pointer w-[240px] h-[200px] md:w-[340px] md:h-[260px] lg:w-[440px] lg:h-[300px] flex-shrink-0 mx-2"
 									onClick={() => setOpenMedia(media)}
 									tabIndex={0}
 									role="button"
@@ -252,7 +252,7 @@ export default function Gallery() {
 											poster={media.poster}
 											controls
 											preload="none"
-											className="w-full h-full object-cover rounded-2xl transition-transform duration-500 group-hover/card:scale-110 bg-black"
+											className="w-full h-full object-cover rounded-2xl transition-transform duration-500 group-hover/card:scale-110 bg-black pointer-events-none"
 											style={{ maxHeight: 300 }}
 											aria-label={media.alt}
 											tabIndex={-1}
