@@ -78,7 +78,7 @@ export default function Header() {
 							asChild
 							className="bg-accent rounded-full px-4 font-headline text-accent-foreground hover:bg-accent/90"
 						>
-							<a href="#contact">Call</a>
+							<a href="tel:9663444851">Call</a>
 						</Button>
 						<Button
 							asChild
@@ -145,7 +145,7 @@ export default function Header() {
 								className="w-full bg-accent rounded-full text-accent-foreground hover:bg-accent/90"
 								onClick={closeSheet}
 							>
-								<a href="#contact">Call</a>
+								<a href="tel:9663444851">Call</a>
 							</Button>
 							<Button
 								asChild
