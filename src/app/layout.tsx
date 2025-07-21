@@ -122,7 +122,7 @@ export default function RootLayout({
 				)}
 			>
 				<Link
-					href="https://wa.me/+919449801748"
+					href="https://wa.me/919663444851"
 					className="fixed bottom-8 right-8 z-50 bg-green-500 rounded-full p-3 shadow-lg hover:scale-110 transition-transform duration-200"
 					target="_blank"
 					rel="noopener noreferrer"

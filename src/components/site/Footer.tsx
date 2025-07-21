@@ -45,7 +45,7 @@ export default function Footer() {
 								</Link>
 							</Button>
 							<Link
-								href="https://wa.me/+919449801748"
+								href="https://wa.me/919663444851"
 								className=" inline-flex items-center justify-center gap-2 rounded-full bg-green-500 px-4 py-2 text-sm font-medium text-white hover:bg-green-600 transition "
 								target="_blank"
 								rel="noopener noreferrer"
