@@ -185,7 +185,7 @@ export default function Contact() {
 									className="w-full bg-accent rounded-full hover:underline text-primary-foreground font-headline mt-4"
 								>
 									<a
-										href="https://maps.app.goo.gl/r6fJ9FkPZ3tJ3S9M9"
+										href="https://maps.app.goo.gl/uR9yT8RJGrdAPCVu7"
 										target="_blank"
 										rel="noopener noreferrer"
 									>
@@ -214,7 +214,7 @@ export default function Contact() {
 									className="w-full bg-accent rounded-full hover:underline text-primary-foreground font-headline mt-4"
 								>
 									<a
-										href="https://maps.app.goo.gl/vN38R8r5w6J5WqC76"
+										href="https://maps.app.goo.gl/uvabzkhwgQRY9jkAA"
 										target="_blank"
 										rel="noopener noreferrer"
 									>
