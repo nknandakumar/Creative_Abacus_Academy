@@ -10,6 +10,7 @@ import Link from "next/link";
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Analytics } from '@vercel/analytics/next';
 gsap.registerPlugin(ScrollTrigger);
 
 const poppins = Poppins({
@@ -130,6 +131,7 @@ export default function RootLayout({
 					<Image src="/whatsapp.svg" alt="WhatsApp" width={30} height={30} />
 				</Link>
 				{children}
+				<Analytics />
 				<SpeedInsights />
 				<Toaster />
 			</body>
